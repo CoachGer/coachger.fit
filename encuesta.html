@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario Nutricional · CoachGer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Instrument+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D2B4E;--cyan:#00B4D8;--cyan-l:#E8F7FB;
+  --white:#fff;--off:#F5F5F3;--gray:#888;--mid:#444;
+  --border:#E5E5E3;--text:#1A2540;--err:#C1121F;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Instrument Sans',sans-serif;background:#fff;color:var(--text);overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:2px;color:var(--navy);text-decoration:none}
+.logo span{color:var(--cyan)}
+.nav-r{display:flex;align-items:center;gap:16px}
+.nav-back{font-size:11px;font-weight:500;letter-spacing:1px;text-transform:uppercase;color:var(--mid);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(--navy)}
+.nav-wa{background:var(--navy);color:#fff;padding:8px 18px;border-radius:100px;font-size:11px;font-weight:600;text-decoration:none;transition:background .2s;letter-spacing:.5px}
+.nav-wa:hover{background:var(--cyan)}
+
+/* HERO */
+.page-hero{padding:120px 32px 56px;max-width:640px;margin:0 auto;text-align:center}
+.page-label{font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase;color:var(--cyan);margin-bottom:14px}
+.page-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,12vw,84px);letter-spacing:1px;color:var(--navy);line-height:.9;margin-bottom:20px}
+.page-sub{font-size:15px;color:var(--gray);font-weight:300;line-height:1.75;max-width:480px;margin:0 auto}
+
+/* FORM CONTAINER */
+.form-wrap{padding:0 32px 80px;max-width:640px;margin:0 auto}
+
+/* SECTION */
+.form-section{margin-bottom:48px}
+.form-sec-title{font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:.5px;color:var(--navy);line-height:1;margin-bottom:4px}
+.form-sec-sub{font-size:12px;color:var(--gray);font-weight:300}
+.form-hr{height:1px;background:var(--border);margin:16px 0 24px}
+
+/* FIELDS */
+.form-field{margin-bottom:20px}
+.form-lbl{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--navy);display:block;margin-bottom:8px;line-height:1.5}
+.form-hint{font-size:12px;color:var(--gray);font-weight:300;line-height:1.6;margin-bottom:10px;font-style:italic}
+.form-inp,.form-ta{width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:12px;font-family:'Instrument Sans',sans-serif;font-size:14px;color:var(--navy);outline:none;background:#fff;transition:border-color .2s,box-shadow .2s;appearance:none}
+.form-inp:focus,.form-ta:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,180,216,.1)}
+.form-inp::placeholder,.form-ta::placeholder{color:#bbb}
+.form-ta{resize:vertical;min-height:80px;line-height:1.6}
+.form-inp.error{border-color:var(--err)}
+
+/* ROW 2 */
+.row-2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:500px){.row-2{grid-template-columns:1fr}}
+
+/* RADIO */
+.radio-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.radio-grid.cols-1{grid-template-columns:1fr}
+.radio-opt{display:block;cursor:pointer}
+.radio-opt input{display:none}
+.radio-face{display:flex;align-items:flex-start;gap:10px;padding:12px 16px;border:1.5px solid var(--border);border-radius:12px;font-size:13px;color:var(--mid);transition:all .2s;background:#fff;line-height:1.4}
+.radio-opt input:checked + .radio-face{border-color:var(--cyan);background:var(--cyan-l);color:var(--navy);font-weight:500}
+.radio-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);flex-shrink:0;margin-top:1px;transition:all .2s;display:flex;align-items:center;justify-content:center}
+.radio-opt input:checked + .radio-face .radio-dot{border-color:var(--cyan);background:var(--cyan)}
+.radio-dot::after{content:'';width:6px;height:6px;border-radius:50%;background:#fff;display:none}
+.radio-opt input:checked + .radio-face .radio-dot::after{display:block}
+.radio-sub{font-size:11px;font-weight:300;color:var(--gray);display:block;margin-top:2px}
+.radio-opt input:checked + .radio-face .radio-sub{color:var(--cyan)}
+
+/* SUBMIT */
+.submit-section{background:var(--off);border:1px solid var(--border);border-radius:20px;padding:32px 28px;text-align:center}
+.submit-section p{font-size:14px;color:var(--mid);margin-bottom:24px;line-height:1.7}
+.btn-submit{background:var(--navy);color:#fff;border:none;padding:17px 40px;border-radius:100px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s,transform .15s;width:100%;max-width:340px}
+.btn-submit:hover{background:var(--cyan);transform:translateY(-2px)}
+.btn-submit:active{transform:translateY(0)}
+.btn-submit:disabled{opacity:.6;cursor:not-allowed;transform:none}
+.submit-note{font-size:11px;color:var(--gray);margin-top:12px}
+
+/* SUCCESS */
+.success-screen{display:none;text-align:center;padding:80px 24px}
+.big-emoji{font-size:64px;margin-bottom:24px;display:block}
+.success-screen h2{font-family:'Bebas Neue',sans-serif;font-size:52px;letter-spacing:1px;color:var(--navy);margin-bottom:12px}
+.success-screen p{font-size:15px;color:var(--gray);line-height:1.75;margin-bottom:28px;max-width:420px;margin-left:auto;margin-right:auto}
+.success-box{background:var(--cyan-l);border:1.5px solid rgba(0,180,216,.3);border-radius:16px;padding:20px 24px;max-width:400px;margin:0 auto 32px;font-size:14px;color:var(--navy)}
+.success-box strong{font-weight:600}
+.btn-back{display:inline-block;background:var(--navy);color:#fff;padding:14px 32px;border-radius:100px;font-size:13px;font-weight:600;text-decoration:none;transition:background .2s}
+.btn-back:hover{background:var(--cyan)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-logo{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:2px;color:var(--navy)}
+.foot-logo span{color:var(--cyan)}
+.foot-copy{font-size:11px;color:var(--gray)}
+
+/* WA FLOAT */
+.wa-float{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 24px rgba(37,211,102,.45);z-index:99;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+
+@media(max-width:640px){
+  .radio-grid{grid-template-columns:1fr}
+  .page-hero{padding:100px 20px 40px}
+  .form-wrap{padding:0 20px 60px}
+  footer{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">#Coach<span>Ger</span></a>
+  <div class="nav-r">
+    <a href="index.html" class="nav-back">← Inicio</a>
+    <a href="https://wa.me/+19545446647" target="_blank" class="nav-wa">Hablar →</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <p class="page-label">Plan Nutricional Personalizado</p>
+  <h1 class="page-title">Cuestionario<br>Nutricional</h1>
+  <p class="page-sub">Completa este formulario para que pueda diseñar tu plan personalizado de recomposición corporal.</p>
+</div>
+
+<div class="form-wrap">
+  <form id="intake-form" novalidate>
+
+    <!-- DATOS PERSONALES -->
+    <div class="form-section">
+      <div class="form-sec-title">Datos personales</div>
+      <div class="form-hr"></div>
+      <div class="row-2">
+        <div class="form-field">
+          <label class="form-lbl">Nombre completo *</label>
+          <input class="form-inp" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/>
+        </div>
+        <div class="form-field">
+          <label class="form-lbl">WhatsApp / Teléfono *</label>
+          <input class="form-inp" type="tel" id="telefono" name="telefono" placeholder="+1 (305) 000-0000" required/>
+        </div>
+      </div>
+    </div>
+
+    <!-- RUTINA DIARIA -->
+    <div class="form-section">
+      <div class="form-sec-title">Rutina diaria</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl">01 · ¿A qué hora te levantas y a qué hora te acuestas? *</label>
+        <input class="form-inp" type="text" id="q1" name="q1" placeholder="Ej: Me levanto a las 6am, me acuesto a las 10pm" required/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">02 · ¿A qué hora entrenas normalmente? ¿Cuántas veces por semana? *</label>
+        <input class="form-inp" type="text" id="q2" name="q2" placeholder="Ej: Entreno a las 9am, 5 veces por semana" required/>
+      </div>
+    </div>
+
+    <!-- ALIMENTACIÓN ACTUAL -->
+    <div class="form-section">
+      <div class="form-sec-title">Alimentación actual</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl">03 · ¿Cuántas veces comes al día actualmente? *</label>
+        <input class="form-inp" type="text" id="q3" name="q3" placeholder="Ej: 3 comidas principales + 1 merienda" required/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">04 · ¿Cocinas en casa o comes fuera con frecuencia? *</label>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="q4" value="Cocino en casa" required/><span class="radio-face"><span class="radio-dot"></span>Cocino en casa</span></label>
+          <label class="radio-opt"><input type="radio" name="q4" value="Como fuera con frecuencia"/><span class="radio-face"><span class="radio-dot"></span>Como fuera con frecuencia</span></label>
+          <label class="radio-opt"><input type="radio" name="q4" value="Mitad y mitad"/><span class="radio-face"><span class="radio-dot"></span>Mitad y mitad</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">05 · ¿Qué desayunas normalmente? *</label>
+        <textarea class="form-ta" id="q5" name="q5" placeholder="Describe tu desayuno típico..." required></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">06 · ¿Qué almuerzas normalmente? *</label>
+        <textarea class="form-ta" id="q6" name="q6" placeholder="Describe tu almuerzo típico..." required></textarea>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">07 · ¿Qué cenas normalmente? *</label>
+        <textarea class="form-ta" id="q7" name="q7" placeholder="Describe tu cena típica..." required></textarea>
+      </div>
+    </div>
+
+    <!-- SALUD Y RESTRICCIONES -->
+    <div class="form-section">
+      <div class="form-sec-title">Salud y restricciones</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl">08 · ¿Tienes alguna alergia o intolerancia alimentaria?</label>
+        <input class="form-inp" type="text" id="q8" name="q8" placeholder="Ej: Intolerante a la lactosa, alérgica al maní — o escribe Ninguna"/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">09 · ¿Hay algún alimento que definitivamente no comes?</label>
+        <input class="form-inp" type="text" id="q9" name="q9" placeholder="Ej: Hígado, mariscos — o escribe Ninguno"/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">10 · ¿Tomas algún medicamento actualmente?</label>
+        <input class="form-inp" type="text" id="q10" name="q10" placeholder="Ej: Anticonceptivas, metformina — o escribe Ninguno"/>
+      </div>
+    </div>
+
+    <!-- BIENESTAR GENERAL -->
+    <div class="form-section">
+      <div class="form-sec-title">Bienestar general</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl">11 · ¿Cómo es tu nivel de estrés en el día a día? *</label>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="q11" value="Bajo — me mantengo tranquila" required/><span class="radio-face"><span class="radio-dot"></span>Bajo — me mantengo tranquila</span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Moderado — sube y baja"/><span class="radio-face"><span class="radio-dot"></span>Moderado — sube y baja</span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Alto — me cuesta manejarlo"/><span class="radio-face"><span class="radio-dot"></span>Alto — me cuesta manejarlo</span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Muy alto — estrés constante"/><span class="radio-face"><span class="radio-dot"></span>Muy alto — estrés constante</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">12 · ¿Duermes bien? ¿Cuántas horas aproximadamente? *</label>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="q12" value="Bien — 7 a 8 horas" required/><span class="radio-face"><span class="radio-dot"></span>Bien — 7 a 8 horas</span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Regular — 5 a 6 horas"/><span class="radio-face"><span class="radio-dot"></span>Regular — 5 a 6 horas</span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Mal — menos de 5 horas"/><span class="radio-face"><span class="radio-dot"></span>Mal — menos de 5 horas</span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Más de 8 horas pero no me recupero"/><span class="radio-face"><span class="radio-dot"></span>Más de 8 horas pero no me recupero</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">13 · ¿Cómo describirías tu tránsito digestivo? *</label>
+        <p class="form-hint">Esto nos ayuda a ajustar el plan para que te sientas liviana y con buena energía.</p>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="q13" value="Regular — una vez al día" required/><span class="radio-face"><span class="radio-dot"></span>Regular — una vez al día</span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Lento — cada 2-3 días"/><span class="radio-face"><span class="radio-dot"></span>Lento — cada 2-3 días</span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Estreñida e inflamada"/><span class="radio-face"><span class="radio-dot"></span>Estreñida e inflamada</span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Irregular — varía mucho"/><span class="radio-face"><span class="radio-dot"></span>Irregular — varía mucho</span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESTILO DEL PLAN -->
+    <div class="form-section">
+      <div class="form-sec-title">Estilo del plan</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl">14 · ¿Estarías dispuesta a agregar una caminata de 30 minutos diarios, además de tus entrenos? *</label>
+        <p class="form-hint">Potencia la quema de grasa, mejora la digestión y acelera los resultados de recomposición corporal.</p>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="q14" value="Sí, puedo caminar todos los días" required/><span class="radio-face"><span class="radio-dot"></span>Sí, todos los días</span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Sí, algunos días por semana"/><span class="radio-face"><span class="radio-dot"></span>Sí, algunos días</span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Lo intentaré pero no puedo garantizarlo"/><span class="radio-face"><span class="radio-dot"></span>Lo intentaré</span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Por ahora no es posible"/><span class="radio-face"><span class="radio-dot"></span>Por ahora no es posible</span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl">15 · ¿Cómo prefieres manejar tu plan de comidas? *</label>
+        <div class="radio-grid cols-1">
+          <label class="radio-opt">
+            <input type="radio" name="q15" value="Menú fijo diario — cada día tiene sus comidas exactas ya definidas" required/>
+            <span class="radio-face">
+              <span class="radio-dot"></span>
+              <span><strong>Menú fijo diario</strong><span class="radio-sub">Cada día tiene sus comidas exactas. Tú solo sigues lo que toca.</span></span>
+            </span>
+          </label>
+          <label class="radio-opt">
+            <input type="radio" name="q15" value="Ingredientes base — yo armo el plato según lo que tenga disponible"/>
+            <span class="radio-face">
+              <span class="radio-dot"></span>
+              <span><strong>Ingredientes base</strong><span class="radio-sub">Te doy los ingredientes y porciones, tú combinas según el día.</span></span>
+            </span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ¿ALGO MÁS? -->
+    <div class="form-section">
+      <div class="form-sec-title">¿Algo más que deba saber?</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl">16 · ¿Hay algo importante que no se haya preguntado y quieras que CoachGer sepa antes de diseñar tu plan?</label>
+        <p class="form-hint">Condiciones de salud, cirugías, lesiones, metas específicas, situaciones de vida — lo que consideres relevante.</p>
+        <textarea class="form-ta" id="q16" name="q16" style="min-height:110px" placeholder="Escribe aquí cualquier información adicional... o deja en blanco si no aplica."></textarea>
+      </div>
+    </div>
+
+    <!-- SUBMIT -->
+    <div class="submit-section">
+      <p>Al enviar este formulario, CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
+      <button type="submit" class="btn-submit" id="btn-submit">Enviar cuestionario →</button>
+      <p class="submit-note">Tu información es privada y solo será usada para diseñar tu plan.</p>
+    </div>
+
+  </form>
+
+  <!-- SUCCESS -->
+  <div class="success-screen" id="success-screen">
+    <span class="big-emoji">✅</span>
+    <h2>¡Listo!</h2>
+    <p>Tu cuestionario fue enviado correctamente. CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
+    <div class="success-box">
+      📲 Revisa tu <strong>WhatsApp</strong> — CoachGer te escribirá con los detalles de tu plan personalizado.
+    </div>
+    <a href="index.html" class="btn-back">Volver al inicio →</a>
+  </div>
+</div>
+
+<footer>
+  <div class="foot-logo">#Coach<span>Ger</span></div>
+  <div class="foot-copy">© 2026 · @germanolivo.r · Guía de bienestar personal</div>
+</footer>
+
+<a href="https://wa.me/+19545446647" class="wa-float" target="_blank">💬</a>
+
+<script>
+const YOUR_WHATSAPP = '19545446647';
+
+document.getElementById('intake-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = document.getElementById('btn-submit');
+
+  const required = form.querySelectorAll('[required]');
+  let valid = true;
+  required.forEach(el => {
+    if (el.type === 'radio') {
+      const checked = Array.from(form.querySelectorAll(`[name="${el.name}"]`)).some(r => r.checked);
+      if (!checked) { valid = false; el.closest('.form-field').style.outline = '2px solid var(--err)'; el.closest('.form-field').style.borderRadius = '12px'; }
+      else { el.closest('.form-field').style.outline = 'none'; }
+    } else {
+      if (!el.value.trim()) { valid = false; el.classList.add('error'); }
+      else { el.classList.remove('error'); }
+    }
+  });
+
+  if (!valid) {
+    const first = form.querySelector('.error, [style*="var(--err)"]');
+    if (first) first.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  btn.disabled = true;
+  btn.textContent = 'Enviando...';
+
+  const getT = id  => { const el = document.getElementById(id); return el ? (el.value.trim() || '—') : '—'; };
+  const getR = name => { const el = form.querySelector(`[name="${name}"]:checked`); return el ? el.value : '—'; };
+
+  const msg = encodeURIComponent(
+`🏋️ NUEVO CUESTIONARIO — #CoachGer
+
+👤 *Nombre:* ${getT('nombre')}
+📱 *Teléfono:* ${getT('telefono')}
+
+*01 Horario:* ${getT('q1')}
+*02 Entreno:* ${getT('q2')}
+*03 Comidas/día:* ${getT('q3')}
+*04 Cocina en casa:* ${getR('q4')}
+*05 Desayuno:* ${getT('q5')}
+*06 Almuerzo:* ${getT('q6')}
+*07 Cena:* ${getT('q7')}
+*08 Alergias:* ${getT('q8')}
+*09 No come:* ${getT('q9')}
+*10 Medicamentos:* ${getT('q10')}
+*11 Estrés:* ${getR('q11')}
+*12 Sueño:* ${getR('q12')}
+*13 Digestión:* ${getR('q13')}
+*14 Caminata:* ${getR('q14')}
+*15 Estilo plan:* ${getR('q15')}
+*16 Comentarios:* ${getT('q16')}`
+  );
+
+  window.open(`https://wa.me/${YOUR_WHATSAPP}?text=${msg}`, '_blank');
+
+  setTimeout(() => {
+    document.getElementById('intake-form').style.display = 'none';
+    document.getElementById('success-screen').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, 600);
+});
+</script>
+</body>
+</html>

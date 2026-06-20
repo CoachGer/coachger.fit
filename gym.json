@@ -1,0 +1,51 @@
+{
+  "gym": "Sweat440 Pines",
+  "regular": [
+    {
+      "day_es": "Lunes",
+      "day_en": "Monday",
+      "time": "5:00 – 10:30 AM"
+    },
+    {
+      "day_es": "Martes",
+      "day_en": "Tuesday",
+      "time": "5:00 – 10:30 AM"
+    },
+    {
+      "day_es": "Miércoles",
+      "day_en": "Wednesday",
+      "time": "5:00 – 10:30 AM"
+    },
+    {
+      "day_es": "Jueves",
+      "day_en": "Thursday",
+      "time": "5:00 – 10:30 AM"
+    },
+    {
+      "day_es": "Viernes",
+      "day_en": "Friday",
+      "time": "5:00 – 10:30 AM"
+    },
+    {
+      "day_es": "Sábado",
+      "day_en": "Saturday",
+      "time": "8:00 AM – 12:00 PM"
+    }
+  ],
+  "special": [
+    {
+      "date": "2026-05-29",
+      "time": "4:00 PM – 8:00 PM",
+      "location": "Sweat440 Pines",
+      "note_es": "Sesión extendida",
+      "note_en": "Extended session"
+    },
+    {
+      "date": "2026-06-03",
+      "time": "6:00 PM",
+      "location": "Sawgrass Mall",
+      "note_es": "Sawgrass Run Club · Global Running Day 🏃",
+      "note_en": "Sawgrass Run Club · Global Running Day 🏃"
+    }
+  ]
+}
