@@ -104,6 +104,9 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   .form-wrap{padding:0 20px 60px}
   footer{flex-direction:column;text-align:center}
 }
+.lang-toggle{display:flex;gap:4px;background:var(--off);border:1px solid var(--border);border-radius:100px;padding:3px}
+.lang-btn{font-size:10px;font-weight:600;letter-spacing:1px;padding:4px 10px;border-radius:100px;cursor:pointer;border:none;background:transparent;color:var(--gray);transition:all .2s}
+.lang-btn.active{background:var(--navy);color:#fff}
 </style>
 </head>
 <body>
@@ -111,15 +114,20 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 <nav>
   <a href="index.html" class="logo">#Coach<span>Ger</span></a>
   <div class="nav-r">
-    <a href="index.html" class="nav-back">← Inicio</a>
-    <a href="https://wa.me/+19545446647" target="_blank" class="nav-wa">Hablar →</a>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+    </div>
+    <a href="index.html" class="nav-back" data-es="← Inicio" data-en="← Home" data-pt="← Início">← Inicio</a>
+    <a href="https://wa.me/+19545446647" target="_blank" class="nav-wa" data-es="Hablar →" data-en="Talk →" data-pt="Falar →">Hablar →</a>
   </div>
 </nav>
 
 <div class="page-hero">
-  <p class="page-label">Plan Nutricional Personalizado</p>
-  <h1 class="page-title">Cuestionario<br>Nutricional</h1>
-  <p class="page-sub">Completa este formulario para que pueda diseñar tu plan personalizado de recomposición corporal.</p>
+  <p class="page-label" data-es="Plan Nutricional Personalizado" data-en="Personalized Nutrition Plan" data-pt="Plano Nutricional Personalizado">Plan Nutricional Personalizado</p>
+  <h1 class="page-title" data-es="Cuestionario<br>Nutricional" data-en="Nutrition<br>Questionnaire" data-pt="Questionário<br>Nutricional">Cuestionario<br>Nutricional</h1>
+  <p class="page-sub" data-es="Completa este formulario para que pueda diseñar tu plan personalizado de recomposición corporal." data-en="Fill out this form so I can design your personalized body recomposition plan." data-pt="Preencha este formulário para que eu possa montar seu plano personalizado de recomposição corporal.">Completa este formulario para que pueda diseñar tu plan personalizado de recomposición corporal.</p>
 </div>
 
 <div class="form-wrap">
@@ -127,15 +135,15 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 
     <!-- DATOS PERSONALES -->
     <div class="form-section">
-      <div class="form-sec-title">Datos personales</div>
+      <div class="form-sec-title" data-es="Datos personales" data-en="Personal details" data-pt="Dados pessoais">Datos personales</div>
       <div class="form-hr"></div>
       <div class="row-2">
         <div class="form-field">
-          <label class="form-lbl">Nombre completo *</label>
-          <input class="form-inp" type="text" id="nombre" name="nombre" placeholder="Tu nombre" required/>
+          <label class="form-lbl" data-es="Nombre completo *" data-en="Full name *" data-pt="Nome completo *">Nombre completo *</label>
+          <input class="form-inp" type="text" id="nombre" name="nombre" placeholder="Tu nombre" data-es="Tu nombre" data-en="Your name" data-pt="Seu nome" data-placeholder-es="Tu nombre" data-placeholder-en="Your name" data-placeholder-pt="Seu nome" required/>
         </div>
         <div class="form-field">
-          <label class="form-lbl">WhatsApp / Teléfono *</label>
+          <label class="form-lbl" data-es="WhatsApp / Teléfono *" data-en="WhatsApp / Phone *" data-pt="WhatsApp / Telefone *">WhatsApp / Teléfono *</label>
           <input class="form-inp" type="tel" id="telefono" name="telefono" placeholder="+1 (305) 000-0000" required/>
         </div>
       </div>
@@ -143,144 +151,144 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 
     <!-- RUTINA DIARIA -->
     <div class="form-section">
-      <div class="form-sec-title">Rutina diaria</div>
+      <div class="form-sec-title" data-es="Rutina diaria" data-en="Daily routine" data-pt="Rotina diária">Rutina diaria</div>
       <div class="form-hr"></div>
 
       <div class="form-field">
-        <label class="form-lbl">01 · ¿A qué hora te levantas y a qué hora te acuestas? *</label>
-        <input class="form-inp" type="text" id="q1" name="q1" placeholder="Ej: Me levanto a las 6am, me acuesto a las 10pm" required/>
+        <label class="form-lbl" data-es="01 · ¿A qué hora te levantas y a qué hora te acuestas? *" data-en="01 · What time do you wake up and go to bed? *" data-pt="01 · A que horas você acorda e vai dormir? *">01 · ¿A qué hora te levantas y a qué hora te acuestas? *</label>
+        <input class="form-inp" type="text" id="q1" name="q1" placeholder="Ej: Me levanto a las 6am, me acuesto a las 10pm" data-es="Ej: Me levanto a las 6am, me acuesto a las 10pm" data-en="E.g.: I wake up at 6am, sleep at 10pm" data-pt="Ex: Acordo às 6h, durmo às 22h" data-placeholder-es="Ej: Me levanto a las 6am, me acuesto a las 10pm" data-placeholder-en="E.g.: I wake up at 6am, sleep at 10pm" data-placeholder-pt="Ex: Acordo às 6h, durmo às 22h" required/>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">02 · ¿A qué hora entrenas normalmente? ¿Cuántas veces por semana? *</label>
-        <input class="form-inp" type="text" id="q2" name="q2" placeholder="Ej: Entreno a las 9am, 5 veces por semana" required/>
+        <label class="form-lbl" data-es="02 · ¿A qué hora entrenas normalmente? ¿Cuántas veces por semana? *" data-en="02 · What time do you usually train? How many times a week? *" data-pt="02 · A que horas você costuma treinar? Quantas vezes por semana? *">02 · ¿A qué hora entrenas normalmente? ¿Cuántas veces por semana? *</label>
+        <input class="form-inp" type="text" id="q2" name="q2" placeholder="Ej: Entreno a las 9am, 5 veces por semana" data-es="Ej: Entreno a las 9am, 5 veces por semana" data-en="E.g.: I train at 9am, 5 times a week" data-pt="Ex: Treino às 9h, 5 vezes por semana" data-placeholder-es="Ej: Entreno a las 9am, 5 veces por semana" data-placeholder-en="E.g.: I train at 9am, 5 times a week" data-placeholder-pt="Ex: Treino às 9h, 5 vezes por semana" required/>
       </div>
     </div>
 
     <!-- ALIMENTACIÓN ACTUAL -->
     <div class="form-section">
-      <div class="form-sec-title">Alimentación actual</div>
+      <div class="form-sec-title" data-es="Alimentación actual" data-en="Current diet" data-pt="Alimentação atual">Alimentación actual</div>
       <div class="form-hr"></div>
 
       <div class="form-field">
-        <label class="form-lbl">03 · ¿Cuántas veces comes al día actualmente? *</label>
-        <input class="form-inp" type="text" id="q3" name="q3" placeholder="Ej: 3 comidas principales + 1 merienda" required/>
+        <label class="form-lbl" data-es="03 · ¿Cuántas veces comes al día actualmente? *" data-en="03 · How many times a day do you currently eat? *" data-pt="03 · Quantas vezes por dia você come atualmente? *">03 · ¿Cuántas veces comes al día actualmente? *</label>
+        <input class="form-inp" type="text" id="q3" name="q3" placeholder="Ej: 3 comidas principales + 1 merienda" data-es="Ej: 3 comidas principales + 1 merienda" data-en="E.g.: 3 main meals + 1 snack" data-pt="Ex: 3 refeições principais + 1 lanche" data-placeholder-es="Ej: 3 comidas principales + 1 merienda" data-placeholder-en="E.g.: 3 main meals + 1 snack" data-placeholder-pt="Ex: 3 refeições principais + 1 lanche" required/>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">04 · ¿Cocinas en casa o comes fuera con frecuencia? *</label>
+        <label class="form-lbl" data-es="04 · ¿Cocinas en casa o comes fuera con frecuencia? *" data-en="04 · Do you cook at home or eat out often? *" data-pt="04 · Você cozinha em casa ou come fora com frequência? *">04 · ¿Cocinas en casa o comes fuera con frecuencia? *</label>
         <div class="radio-grid">
-          <label class="radio-opt"><input type="radio" name="q4" value="Cocino en casa" required/><span class="radio-face"><span class="radio-dot"></span>Cocino en casa</span></label>
-          <label class="radio-opt"><input type="radio" name="q4" value="Como fuera con frecuencia"/><span class="radio-face"><span class="radio-dot"></span>Como fuera con frecuencia</span></label>
-          <label class="radio-opt"><input type="radio" name="q4" value="Mitad y mitad"/><span class="radio-face"><span class="radio-dot"></span>Mitad y mitad</span></label>
+          <label class="radio-opt"><input type="radio" name="q4" value="Cocino en casa" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Cocino en casa" data-en="I cook at home" data-pt="Cozinho em casa">Cocino en casa</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q4" value="Como fuera con frecuencia"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Como fuera con frecuencia" data-en="I eat out often" data-pt="Como fora com frequência">Como fuera con frecuencia</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q4" value="Mitad y mitad"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Mitad y mitad" data-en="Half and half" data-pt="Meio a meio">Mitad y mitad</span></span></label>
         </div>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">05 · ¿Qué desayunas normalmente? *</label>
-        <textarea class="form-ta" id="q5" name="q5" placeholder="Describe tu desayuno típico..." required></textarea>
+        <label class="form-lbl" data-es="05 · ¿Qué desayunas normalmente? *" data-en="05 · What do you usually have for breakfast? *" data-pt="05 · O que você costuma tomar no café da manhã? *">05 · ¿Qué desayunas normalmente? *</label>
+        <textarea class="form-ta" id="q5" name="q5" placeholder="Describe tu desayuno típico..." data-es="Describe tu desayuno típico..." data-en="Describe your typical breakfast..." data-pt="Descreva seu café da manhã típico..." data-placeholder-es="Describe tu desayuno típico..." data-placeholder-en="Describe your typical breakfast..." data-placeholder-pt="Descreva seu café da manhã típico..." required></textarea>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">06 · ¿Qué almuerzas normalmente? *</label>
-        <textarea class="form-ta" id="q6" name="q6" placeholder="Describe tu almuerzo típico..." required></textarea>
+        <label class="form-lbl" data-es="06 · ¿Qué almuerzas normalmente? *" data-en="06 · What do you usually have for lunch? *" data-pt="06 · O que você costuma almoçar? *">06 · ¿Qué almuerzas normalmente? *</label>
+        <textarea class="form-ta" id="q6" name="q6" placeholder="Describe tu almuerzo típico..." data-es="Describe tu almuerzo típico..." data-en="Describe your typical lunch..." data-pt="Descreva seu almoço típico..." data-placeholder-es="Describe tu almuerzo típico..." data-placeholder-en="Describe your typical lunch..." data-placeholder-pt="Descreva seu almoço típico..." required></textarea>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">07 · ¿Qué cenas normalmente? *</label>
-        <textarea class="form-ta" id="q7" name="q7" placeholder="Describe tu cena típica..." required></textarea>
+        <label class="form-lbl" data-es="07 · ¿Qué cenas normalmente? *" data-en="07 · What do you usually have for dinner? *" data-pt="07 · O que você costuma jantar? *">07 · ¿Qué cenas normalmente? *</label>
+        <textarea class="form-ta" id="q7" name="q7" placeholder="Describe tu cena típica..." data-es="Describe tu cena típica..." data-en="Describe your typical dinner..." data-pt="Descreva seu jantar típico..." data-placeholder-es="Describe tu cena típica..." data-placeholder-en="Describe your typical dinner..." data-placeholder-pt="Descreva seu jantar típico..." required></textarea>
       </div>
     </div>
 
     <!-- SALUD Y RESTRICCIONES -->
     <div class="form-section">
-      <div class="form-sec-title">Salud y restricciones</div>
+      <div class="form-sec-title" data-es="Salud y restricciones" data-en="Health & restrictions" data-pt="Saúde e restrições">Salud y restricciones</div>
       <div class="form-hr"></div>
 
       <div class="form-field">
-        <label class="form-lbl">08 · ¿Tienes alguna alergia o intolerancia alimentaria?</label>
-        <input class="form-inp" type="text" id="q8" name="q8" placeholder="Ej: Intolerante a la lactosa, alérgica al maní — o escribe Ninguna"/>
+        <label class="form-lbl" data-es="08 · ¿Tienes alguna alergia o intolerancia alimentaria?" data-en="08 · Do you have any food allergies or intolerances?" data-pt="08 · Você tem alguma alergia ou intolerância alimentar?">08 · ¿Tienes alguna alergia o intolerancia alimentaria?</label>
+        <input class="form-inp" type="text" id="q8" name="q8" placeholder="Ej: Intolerante a la lactosa, alérgica al maní — o escribe Ninguna" data-es="Ej: Intolerante a la lactosa, alérgica al maní — o escribe Ninguna" data-en="E.g.: Lactose intolerant, peanut allergy — or write None" data-pt="Ex: Intolerante à lactose, alérgica a amendoim — ou escreva Nenhuma" data-placeholder-es="Ej: Intolerante a la lactosa, alérgica al maní — o escribe Ninguna" data-placeholder-en="E.g.: Lactose intolerant, peanut allergy — or write None" data-placeholder-pt="Ex: Intolerante à lactose, alérgica a amendoim — ou escreva Nenhuma"/>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">09 · ¿Hay algún alimento que definitivamente no comes?</label>
-        <input class="form-inp" type="text" id="q9" name="q9" placeholder="Ej: Hígado, mariscos — o escribe Ninguno"/>
+        <label class="form-lbl" data-es="09 · ¿Hay algún alimento que definitivamente no comes?" data-en="09 · Is there any food you definitely won't eat?" data-pt="09 · Existe algum alimento que você definitivamente não come?">09 · ¿Hay algún alimento que definitivamente no comes?</label>
+        <input class="form-inp" type="text" id="q9" name="q9" placeholder="Ej: Hígado, mariscos — o escribe Ninguno" data-es="Ej: Hígado, mariscos — o escribe Ninguno" data-en="E.g.: Liver, shellfish — or write None" data-pt="Ex: Fígado, frutos do mar — ou escreva Nenhum" data-placeholder-es="Ej: Hígado, mariscos — o escribe Ninguno" data-placeholder-en="E.g.: Liver, shellfish — or write None" data-placeholder-pt="Ex: Fígado, frutos do mar — ou escreva Nenhum"/>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">10 · ¿Tomas algún medicamento actualmente?</label>
-        <input class="form-inp" type="text" id="q10" name="q10" placeholder="Ej: Anticonceptivas, metformina — o escribe Ninguno"/>
+        <label class="form-lbl" data-es="10 · ¿Tomas algún medicamento actualmente?" data-en="10 · Are you currently taking any medication?" data-pt="10 · Você toma algum medicamento atualmente?">10 · ¿Tomas algún medicamento actualmente?</label>
+        <input class="form-inp" type="text" id="q10" name="q10" placeholder="Ej: Anticonceptivas, metformina — o escribe Ninguno" data-es="Ej: Anticonceptivas, metformina — o escribe Ninguno" data-en="E.g.: Birth control, metformin — or write None" data-pt="Ex: Anticoncepcional, metformina — ou escreva Nenhum" data-placeholder-es="Ej: Anticonceptivas, metformina — o escribe Ninguno" data-placeholder-en="E.g.: Birth control, metformin — or write None" data-placeholder-pt="Ex: Anticoncepcional, metformina — ou escreva Nenhum"/>
       </div>
     </div>
 
     <!-- BIENESTAR GENERAL -->
     <div class="form-section">
-      <div class="form-sec-title">Bienestar general</div>
+      <div class="form-sec-title" data-es="Bienestar general" data-en="General wellness" data-pt="Bem-estar geral">Bienestar general</div>
       <div class="form-hr"></div>
 
       <div class="form-field">
-        <label class="form-lbl">11 · ¿Cómo es tu nivel de estrés en el día a día? *</label>
+        <label class="form-lbl" data-es="11 · ¿Cómo es tu nivel de estrés en el día a día? *" data-en="11 · What's your day-to-day stress level? *" data-pt="11 · Como é o seu nível de estresse no dia a dia? *">11 · ¿Cómo es tu nivel de estrés en el día a día? *</label>
         <div class="radio-grid">
-          <label class="radio-opt"><input type="radio" name="q11" value="Bajo — me mantengo tranquila" required/><span class="radio-face"><span class="radio-dot"></span>Bajo — me mantengo tranquila</span></label>
-          <label class="radio-opt"><input type="radio" name="q11" value="Moderado — sube y baja"/><span class="radio-face"><span class="radio-dot"></span>Moderado — sube y baja</span></label>
-          <label class="radio-opt"><input type="radio" name="q11" value="Alto — me cuesta manejarlo"/><span class="radio-face"><span class="radio-dot"></span>Alto — me cuesta manejarlo</span></label>
-          <label class="radio-opt"><input type="radio" name="q11" value="Muy alto — estrés constante"/><span class="radio-face"><span class="radio-dot"></span>Muy alto — estrés constante</span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Bajo — me mantengo tranquila" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Bajo — me mantengo tranquila" data-en="Low — I stay calm" data-pt="Baixo — me mantenho tranquila">Bajo — me mantengo tranquila</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Moderado — sube y baja"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Moderado — sube y baja" data-en="Moderate — it comes and goes" data-pt="Moderado — sobe e desce">Moderado — sube y baja</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Alto — me cuesta manejarlo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Alto — me cuesta manejarlo" data-en="High — hard to manage" data-pt="Alto — custa controlar">Alto — me cuesta manejarlo</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q11" value="Muy alto — estrés constante"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Muy alto — estrés constante" data-en="Very high — constant stress" data-pt="Muito alto — estresse constante">Muy alto — estrés constante</span></span></label>
         </div>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">12 · ¿Duermes bien? ¿Cuántas horas aproximadamente? *</label>
+        <label class="form-lbl" data-es="12 · ¿Duermes bien? ¿Cuántas horas aproximadamente? *" data-en="12 · Do you sleep well? Roughly how many hours? *" data-pt="12 · Você dorme bem? Aproximadamente quantas horas? *">12 · ¿Duermes bien? ¿Cuántas horas aproximadamente? *</label>
         <div class="radio-grid">
-          <label class="radio-opt"><input type="radio" name="q12" value="Bien — 7 a 8 horas" required/><span class="radio-face"><span class="radio-dot"></span>Bien — 7 a 8 horas</span></label>
-          <label class="radio-opt"><input type="radio" name="q12" value="Regular — 5 a 6 horas"/><span class="radio-face"><span class="radio-dot"></span>Regular — 5 a 6 horas</span></label>
-          <label class="radio-opt"><input type="radio" name="q12" value="Mal — menos de 5 horas"/><span class="radio-face"><span class="radio-dot"></span>Mal — menos de 5 horas</span></label>
-          <label class="radio-opt"><input type="radio" name="q12" value="Más de 8 horas pero no me recupero"/><span class="radio-face"><span class="radio-dot"></span>Más de 8 horas pero no me recupero</span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Bien — 7 a 8 horas" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Bien — 7 a 8 horas" data-en="Well — 7 to 8 hours" data-pt="Bem — 7 a 8 horas">Bien — 7 a 8 horas</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Regular — 5 a 6 horas"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Regular — 5 a 6 horas" data-en="So-so — 5 to 6 hours" data-pt="Regular — 5 a 6 horas">Regular — 5 a 6 horas</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Mal — menos de 5 horas"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Mal — menos de 5 horas" data-en="Poorly — less than 5 hours" data-pt="Mal — menos de 5 horas">Mal — menos de 5 horas</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q12" value="Más de 8 horas pero no me recupero"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Más de 8 horas pero no me recupero" data-en="More than 8 hours but I don't recover" data-pt="Mais de 8 horas mas não me recupero">Más de 8 horas pero no me recupero</span></span></label>
         </div>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">13 · ¿Cómo describirías tu tránsito digestivo? *</label>
-        <p class="form-hint">Esto nos ayuda a ajustar el plan para que te sientas liviana y con buena energía.</p>
+        <label class="form-lbl" data-es="13 · ¿Cómo describirías tu tránsito digestivo? *" data-en="13 · How would you describe your digestion? *" data-pt="13 · Como você descreveria seu trânsito intestinal? *">13 · ¿Cómo describirías tu tránsito digestivo? *</label>
+        <p class="form-hint" data-es="Esto nos ayuda a ajustar el plan para que te sientas liviana y con buena energía." data-en="This helps us fine-tune the plan so you feel light and energized." data-pt="Isso nos ajuda a ajustar o plano para você se sentir leve e com boa energia.">Esto nos ayuda a ajustar el plan para que te sientas liviana y con buena energía.</p>
         <div class="radio-grid">
-          <label class="radio-opt"><input type="radio" name="q13" value="Regular — una vez al día" required/><span class="radio-face"><span class="radio-dot"></span>Regular — una vez al día</span></label>
-          <label class="radio-opt"><input type="radio" name="q13" value="Lento — cada 2-3 días"/><span class="radio-face"><span class="radio-dot"></span>Lento — cada 2-3 días</span></label>
-          <label class="radio-opt"><input type="radio" name="q13" value="Estreñida e inflamada"/><span class="radio-face"><span class="radio-dot"></span>Estreñida e inflamada</span></label>
-          <label class="radio-opt"><input type="radio" name="q13" value="Irregular — varía mucho"/><span class="radio-face"><span class="radio-dot"></span>Irregular — varía mucho</span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Regular — una vez al día" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Regular — una vez al día" data-en="Regular — once a day" data-pt="Regular — uma vez ao dia">Regular — una vez al día</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Lento — cada 2-3 días"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Lento — cada 2-3 días" data-en="Slow — every 2-3 days" data-pt="Lento — a cada 2-3 dias">Lento — cada 2-3 días</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Estreñida e inflamada"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Estreñida e inflamada" data-en="Constipated and bloated" data-pt="Presa e inchada">Estreñida e inflamada</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q13" value="Irregular — varía mucho"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Irregular — varía mucho" data-en="Irregular — varies a lot" data-pt="Irregular — varia muito">Irregular — varía mucho</span></span></label>
         </div>
       </div>
     </div>
 
     <!-- ESTILO DEL PLAN -->
     <div class="form-section">
-      <div class="form-sec-title">Estilo del plan</div>
+      <div class="form-sec-title" data-es="Estilo del plan" data-en="Plan style" data-pt="Estilo do plano">Estilo del plan</div>
       <div class="form-hr"></div>
 
       <div class="form-field">
-        <label class="form-lbl">14 · ¿Estarías dispuesta a agregar una caminata de 30 minutos diarios, además de tus entrenos? *</label>
-        <p class="form-hint">Potencia la quema de grasa, mejora la digestión y acelera los resultados de recomposición corporal.</p>
+        <label class="form-lbl" data-es="14 · ¿Estarías dispuesta a agregar una caminata de 30 minutos diarios, además de tus entrenos? *" data-en="14 · Would you be willing to add a 30-minute daily walk, on top of your workouts? *" data-pt="14 · Você estaria disposta a adicionar uma caminhada de 30 minutos por dia, além dos seus treinos? *">14 · ¿Estarías dispuesta a agregar una caminata de 30 minutos diarios, además de tus entrenos? *</label>
+        <p class="form-hint" data-es="Potencia la quema de grasa, mejora la digestión y acelera los resultados de recomposición corporal." data-en="It boosts fat burning, improves digestion and speeds up body recomposition results." data-pt="Potencializa a queima de gordura, melhora a digestão e acelera os resultados de recomposição corporal.">Potencia la quema de grasa, mejora la digestión y acelera los resultados de recomposición corporal.</p>
         <div class="radio-grid">
-          <label class="radio-opt"><input type="radio" name="q14" value="Sí, puedo caminar todos los días" required/><span class="radio-face"><span class="radio-dot"></span>Sí, todos los días</span></label>
-          <label class="radio-opt"><input type="radio" name="q14" value="Sí, algunos días por semana"/><span class="radio-face"><span class="radio-dot"></span>Sí, algunos días</span></label>
-          <label class="radio-opt"><input type="radio" name="q14" value="Lo intentaré pero no puedo garantizarlo"/><span class="radio-face"><span class="radio-dot"></span>Lo intentaré</span></label>
-          <label class="radio-opt"><input type="radio" name="q14" value="Por ahora no es posible"/><span class="radio-face"><span class="radio-dot"></span>Por ahora no es posible</span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Sí, puedo caminar todos los días" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí, todos los días" data-en="Yes, every day" data-pt="Sim, todos os dias">Sí, todos los días</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Sí, algunos días por semana"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí, algunos días" data-en="Yes, some days" data-pt="Sim, alguns dias">Sí, algunos días</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Lo intentaré pero no puedo garantizarlo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Lo intentaré" data-en="I'll try" data-pt="Vou tentar">Lo intentaré</span></span></label>
+          <label class="radio-opt"><input type="radio" name="q14" value="Por ahora no es posible"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Por ahora no es posible" data-en="Not possible right now" data-pt="Por enquanto não é possível">Por ahora no es posible</span></span></label>
         </div>
       </div>
 
       <div class="form-field">
-        <label class="form-lbl">15 · ¿Cómo prefieres manejar tu plan de comidas? *</label>
+        <label class="form-lbl" data-es="15 · ¿Cómo prefieres manejar tu plan de comidas? *" data-en="15 · How do you prefer to handle your meal plan? *" data-pt="15 · Como você prefere lidar com seu plano de refeições? *">15 · ¿Cómo prefieres manejar tu plan de comidas? *</label>
         <div class="radio-grid cols-1">
           <label class="radio-opt">
             <input type="radio" name="q15" value="Menú fijo diario — cada día tiene sus comidas exactas ya definidas" required/>
             <span class="radio-face">
               <span class="radio-dot"></span>
-              <span><strong>Menú fijo diario</strong><span class="radio-sub">Cada día tiene sus comidas exactas. Tú solo sigues lo que toca.</span></span>
+              <span><strong data-es="Menú fijo diario" data-en="Fixed daily menu" data-pt="Menu fixo diário">Menú fijo diario</strong><span class="radio-sub" data-es="Cada día tiene sus comidas exactas. Tú solo sigues lo que toca." data-en="Each day has its exact meals. You just follow along." data-pt="Cada dia tem suas refeições exatas. Você só segue o que toca.">Cada día tiene sus comidas exactas. Tú solo sigues lo que toca.</span></span>
             </span>
           </label>
           <label class="radio-opt">
             <input type="radio" name="q15" value="Ingredientes base — yo armo el plato según lo que tenga disponible"/>
             <span class="radio-face">
               <span class="radio-dot"></span>
-              <span><strong>Ingredientes base</strong><span class="radio-sub">Te doy los ingredientes y porciones, tú combinas según el día.</span></span>
+              <span><strong data-es="Ingredientes base" data-en="Base ingredients" data-pt="Ingredientes base">Ingredientes base</strong><span class="radio-sub" data-es="Te doy los ingredientes y porciones, tú combinas según el día." data-en="I give you the ingredients and portions, you combine them each day." data-pt="Te dou os ingredientes e porções, você combina conforme o dia.">Te doy los ingredientes y porciones, tú combinas según el día.</span></span>
             </span>
           </label>
         </div>
@@ -289,21 +297,21 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 
     <!-- ¿ALGO MÁS? -->
     <div class="form-section">
-      <div class="form-sec-title">¿Algo más que deba saber?</div>
+      <div class="form-sec-title" data-es="¿Algo más que deba saber?" data-en="Anything else I should know?" data-pt="Algo mais que eu deva saber?">¿Algo más que deba saber?</div>
       <div class="form-hr"></div>
 
       <div class="form-field">
-        <label class="form-lbl">16 · ¿Hay algo importante que no se haya preguntado y quieras que CoachGer sepa antes de diseñar tu plan?</label>
-        <p class="form-hint">Condiciones de salud, cirugías, lesiones, metas específicas, situaciones de vida — lo que consideres relevante.</p>
-        <textarea class="form-ta" id="q16" name="q16" style="min-height:110px" placeholder="Escribe aquí cualquier información adicional... o deja en blanco si no aplica."></textarea>
+        <label class="form-lbl" data-es="16 · ¿Hay algo importante que no se haya preguntado y quieras que CoachGer sepa antes de diseñar tu plan?" data-en="16 · Is there anything important I haven't asked that you'd like CoachGer to know before designing your plan?" data-pt="16 · Há algo importante que não foi perguntado e que você gostaria que o CoachGer soubesse antes de montar seu plano?">16 · ¿Hay algo importante que no se haya preguntado y quieras que CoachGer sepa antes de diseñar tu plan?</label>
+        <p class="form-hint" data-es="Condiciones de salud, cirugías, lesiones, metas específicas, situaciones de vida — lo que consideres relevante." data-en="Health conditions, surgeries, injuries, specific goals, life situations — whatever you consider relevant." data-pt="Condições de saúde, cirurgias, lesões, metas específicas, situações de vida — o que você considerar relevante.">Condiciones de salud, cirugías, lesiones, metas específicas, situaciones de vida — lo que consideres relevante.</p>
+        <textarea class="form-ta" id="q16" name="q16" style="min-height:110px" placeholder="Escribe aquí cualquier información adicional... o deja en blanco si no aplica." data-es="Escribe aquí cualquier información adicional... o deja en blanco si no aplica." data-en="Write any additional info here... or leave blank if not applicable." data-pt="Escreva aqui qualquer informação adicional... ou deixe em branco se não se aplica." data-placeholder-es="Escribe aquí cualquier información adicional... o deja en blanco si no aplica." data-placeholder-en="Write any additional info here... or leave blank if not applicable." data-placeholder-pt="Escreva aqui qualquer informação adicional... ou deixe em branco se não se aplica."></textarea>
       </div>
     </div>
 
     <!-- SUBMIT -->
     <div class="submit-section">
-      <p>Al enviar este formulario, CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
-      <button type="submit" class="btn-submit" id="btn-submit">Enviar cuestionario →</button>
-      <p class="submit-note">Tu información es privada y solo será usada para diseñar tu plan.</p>
+      <p data-es="Al enviar este formulario, CoachGer revisará tu información y se pondrá en contacto contigo pronto." data-en="When you submit this form, CoachGer will review your information and get in touch with you soon." data-pt="Ao enviar este formulário, o CoachGer vai revisar suas informações e entrar em contato em breve.">Al enviar este formulario, CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
+      <button type="submit" class="btn-submit" id="btn-submit" data-es="Enviar cuestionario →" data-en="Submit questionnaire →" data-pt="Enviar questionário →">Enviar cuestionario →</button>
+      <p class="submit-note" data-es="Tu información es privada y solo será usada para diseñar tu plan." data-en="Your information is private and will only be used to design your plan." data-pt="Suas informações são privadas e só serão usadas para montar seu plano.">Tu información es privada y solo será usada para diseñar tu plan.</p>
     </div>
 
   </form>
@@ -311,12 +319,12 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   <!-- SUCCESS -->
   <div class="success-screen" id="success-screen">
     <span class="big-emoji">✅</span>
-    <h2>¡Listo!</h2>
-    <p>Tu cuestionario fue enviado correctamente. CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
+    <h2 data-es="¡Listo!" data-en="Done!" data-pt="Pronto!">¡Listo!</h2>
+    <p data-es="Tu cuestionario fue enviado correctamente. CoachGer revisará tu información y se pondrá en contacto contigo pronto." data-en="Your questionnaire was sent successfully. CoachGer will review your information and get in touch with you soon." data-pt="Seu questionário foi enviado com sucesso. O CoachGer vai revisar suas informações e entrar em contato em breve.">Tu cuestionario fue enviado correctamente. CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
     <div class="success-box">
-      📲 Revisa tu <strong>WhatsApp</strong> — CoachGer te escribirá con los detalles de tu plan personalizado.
+      <span data-es="📲 Revisa tu <strong>WhatsApp</strong> — CoachGer te escribirá con los detalles de tu plan personalizado." data-en="📲 Check your <strong>WhatsApp</strong> — CoachGer will message you with the details of your personalized plan." data-pt="📲 Confira seu <strong>WhatsApp</strong> — o CoachGer vai te escrever com os detalhes do seu plano personalizado.">📲 Revisa tu <strong>WhatsApp</strong> — CoachGer te escribirá con los detalles de tu plan personalizado.</span>
     </div>
-    <a href="index.html" class="btn-back">Volver al inicio →</a>
+    <a href="index.html" class="btn-back" data-es="Volver al inicio →" data-en="Back to home →" data-pt="Voltar ao início →">Volver al inicio →</a>
   </div>
 </div>
 
@@ -328,6 +336,20 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 <a href="https://wa.me/+19545446647" class="wa-float" target="_blank">💬</a>
 
 <script>
+let LANG='es';
+function setLang(l){
+  LANG=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.textContent===l.toUpperCase()));
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-es]').forEach(el=>{
+    const val=el.getAttribute('data-'+l);
+    if(!val) return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){
+      const k='data-placeholder-'+l;
+      if(el.hasAttribute(k)) el.placeholder=el.getAttribute(k);
+    } else { el.innerHTML=val; }
+  });
+}
 const YOUR_WHATSAPP = '19545446647';
 
 document.getElementById('intake-form').addEventListener('submit', function(e) {
@@ -355,7 +377,7 @@ document.getElementById('intake-form').addEventListener('submit', function(e) {
   }
 
   btn.disabled = true;
-  btn.textContent = 'Enviando...';
+  btn.textContent = {es:'Enviando...',en:'Sending...',pt:'Enviando...'}[LANG] || 'Enviando...';
 
   const getT = id  => { const el = document.getElementById(id); return el ? (el.value.trim() || '—') : '—'; };
   const getR = name => { const el = form.querySelector(`[name="${name}"]:checked`); return el ? el.value : '—'; };

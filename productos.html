@@ -41,157 +41,195 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 .wa-float{position:fixed;bottom:28px;right:28px;width:54px;height:54px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 24px rgba(37,211,102,.45);z-index:99;text-decoration:none;transition:transform .2s}
 .wa-float:hover{transform:scale(1.1)}
 @media(max-width:640px){.products-grid{grid-template-columns:1fr 1fr}.page-hero{padding:100px 20px 40px}.products-section{padding:0 20px 60px}footer{flex-direction:column;text-align:center}}
+
+/* ── Lead modal: Proteínas Especiales ── */
+.lead-modal{position:fixed;inset:0;background:rgba(13,43,78,.55);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.lead-modal.open{display:flex}
+.lead-box{background:#fff;border-radius:24px;padding:30px 26px;max-width:380px;width:100%;text-align:center;position:relative;box-shadow:0 20px 60px rgba(13,43,78,.28)}
+.lead-x{position:absolute;top:12px;right:15px;background:none;border:none;font-size:24px;color:var(--gray);cursor:pointer;line-height:1}
+.lead-emoji{font-size:42px;display:block;margin-bottom:6px}
+.lead-title{font-family:'Bebas Neue',sans-serif;font-size:25px;letter-spacing:.5px;color:var(--navy);margin-bottom:8px;line-height:1}
+.lead-sub{font-size:12px;color:var(--gray);line-height:1.6;margin-bottom:18px}
+.lead-input{width:100%;padding:13px 16px;margin-bottom:10px;border:1.5px solid var(--border);border-radius:12px;font-family:inherit;font-size:14px;color:var(--navy);background:var(--off);outline:none;transition:border-color .2s}
+.lead-input:focus{border-color:var(--cyan)}
+.lead-input.shake{animation:shk .4s;border-color:#e74c3c}
+@keyframes shk{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.lead-submit{width:100%;background:var(--navy);color:#fff;border:none;padding:14px;border-radius:100px;font-family:'Bebas Neue',sans-serif;font-size:16px;letter-spacing:1px;cursor:pointer;transition:background .2s;margin-top:4px}
+.lead-submit:hover{background:var(--cyan)}
+.lead-success{display:none;font-size:12px;color:#27ae60;font-weight:600;margin-top:12px;line-height:1.5}
+.lead-hint{font-size:10px;color:var(--gray);margin-top:12px;line-height:1.5}
+.nav-r{display:flex;align-items:center;gap:14px}
+.lang-toggle{display:flex;gap:4px;background:var(--off);border:1px solid var(--border);border-radius:100px;padding:3px}
+.lang-btn{font-size:10px;font-weight:600;letter-spacing:1px;padding:4px 10px;border-radius:100px;cursor:pointer;border:none;background:transparent;color:var(--gray);transition:all .2s}
+.lang-btn.active{background:var(--navy);color:#fff}
 </style>
 </head>
 <body>
 <nav>
   <a href="index.html" class="logo">#Coach<span>Ger</span></a>
-  <a href="index.html" class="nav-back">← Volver</a>
+  <div class="nav-r">
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('pt')">PT</button>
+    </div>
+    <a href="index.html" class="nav-back" data-es="← Volver" data-en="← Back" data-pt="← Voltar">← Volver</a>
+  </div>
 </nav>
 
 <div class="page-hero">
-  <p class="page-label">Suplementos · Gear · Recursos</p>
-  <h1 class="page-title">Lo que<br>uso yo.</h1>
-  <p class="page-sub">Solo te recomiendo lo que uso o he probado personalmente. Sin relleno, sin patrocinios forzados.</p>
+  <p class="page-label" data-es="Suplementos · Gear · Recursos" data-en="Supplements · Gear · Resources" data-pt="Suplementos · Equipamentos · Recursos">Suplementos · Gear · Recursos</p>
+  <h1 class="page-title" data-es="Lo que<br>uso yo." data-en="What I<br>use." data-pt="O que<br>eu uso.">Lo que<br>uso yo.</h1>
+  <p class="page-sub" data-es="Solo te recomiendo lo que uso o he probado personalmente. Sin relleno, sin patrocinios forzados." data-en="I only recommend what I use or have personally tested. No filler, no forced sponsorships." data-pt="Só recomendo o que uso ou já testei pessoalmente. Sem enrolação, sem patrocínios forçados.">Solo te recomiendo lo que uso o he probado personalmente. Sin relleno, sin patrocinios forzados.</p>
 </div>
 
 <div class="products-section">
 
-  <div class="cat-label">💊 Suplementos</div>
+  <div class="cat-label" data-es="💊 Suplementos" data-en="💊 Supplements" data-pt="💊 Suplementos">💊 Suplementos</div>
   <div class="products-grid">
     <a href="https://amzn.to/3GqNU0W" target="_blank" class="prod-card">
       <span class="prod-emoji">🧠</span>
-      <div class="prod-name">Magnesio Diario</div>
-      <p class="prod-desc">Energía y recuperación muscular. Uno de los más subestimados — lo tomo todas las noches.</p>
-      <span class="prod-cta">Ver en Amazon →</span>
+      <div class="prod-name" data-es="Magnesio Diario" data-en="Daily Magnesium" data-pt="Magnésio Diário">Magnesio Diario</div>
+      <p class="prod-desc" data-es="Energía y recuperación muscular. Uno de los más subestimados — lo tomo todas las noches." data-en="Energy and muscle recovery. One of the most underrated — I take it every night." data-pt="Energia e recuperação muscular. Um dos mais subestimados — tomo todas as noites.">Energía y recuperación muscular. Uno de los más subestimados — lo tomo todas las noches.</p>
+      <span class="prod-cta" data-es="Ver en Amazon →" data-en="View on Amazon →" data-pt="Ver na Amazon →">Ver en Amazon →</span>
     </a>
     <a href="https://amzn.to/44jswEe" target="_blank" class="prod-card">
       <span class="prod-emoji">💪</span>
       <div class="prod-name">Creatina + BCAA + HMB</div>
-      <p class="prod-desc">Todo en uno. Fuerza, músculo, recuperación. El stack que uso para entrenamientos serios.</p>
+      <p class="prod-desc" data-es="Todo en uno. Fuerza, músculo, recuperación. El stack que uso para entrenamientos serios." data-en="All in one. Strength, muscle, recovery. The stack I use for serious training." data-pt="Tudo em um. Força, músculo, recuperação. O combo que uso para treinos sérios.">Todo en uno. Fuerza, músculo, recuperación. El stack que uso para entrenamientos serios.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
     <a href="https://amzn.to/4lS3R0b" target="_blank" class="prod-card">
       <span class="prod-emoji">⚡</span>
-      <div class="prod-name">Creatina Limpia</div>
-      <p class="prod-desc">Sin excusas. Creatina pura, micronizada, sin relleno. El suplemento más estudiado del mundo.</p>
+      <div class="prod-name" data-es="Creatina Limpia" data-en="Clean Creatine" data-pt="Creatina Pura">Creatina Limpia</div>
+      <p class="prod-desc" data-es="Sin excusas. Creatina pura, micronizada, sin relleno. El suplemento más estudiado del mundo." data-en="No excuses. Pure micronized creatine, no filler. The most studied supplement in the world." data-pt="Sem desculpas. Creatina pura, micronizada, sem enrolação. O suplemento mais estudado do mundo.">Sin excusas. Creatina pura, micronizada, sin relleno. El suplemento más estudiado del mundo.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
     <a href="https://amzn.to/3GvX0JK" target="_blank" class="prod-card">
       <span class="prod-emoji">🍬</span>
-      <div class="prod-name">Creatina en Gomitas</div>
-      <p class="prod-desc">Para viajes y días que no quieres mezclar nada. Fácil, rica y funciona igual.</p>
+      <div class="prod-name" data-es="Creatina en Gomitas" data-en="Creatine Gummies" data-pt="Creatina em Gomas">Creatina en Gomitas</div>
+      <p class="prod-desc" data-es="Para viajes y días que no quieres mezclar nada. Fácil, rica y funciona igual." data-en="For travel and days you don't want to mix anything. Easy, tasty, works just the same." data-pt="Para viagens e dias que você não quer misturar nada. Fácil, gostosa e funciona igual.">Para viajes y días que no quieres mezclar nada. Fácil, rica y funciona igual.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
     <a href="https://amzn.to/4ju1OxH" target="_blank" class="prod-card">
       <span class="prod-emoji">🥛</span>
-      <div class="prod-name">Proteína Vanilla</div>
-      <p class="prod-desc">Whey isolate, sin edulcorantes artificiales, endulzada con monk fruit. Mi favorita.</p>
-      <span class="prod-cta">Ver en Amazon →</span>
-    </a>
-    <a href="https://amzn.to/3EJg2vD" target="_blank" class="prod-card">
-      <span class="prod-emoji">🍫</span>
-      <div class="prod-name">Proteína Chocolate</div>
-      <p class="prod-desc">La misma base de la vanilla — para cuando quieres algo más indulgente post-entreno.</p>
+      <div class="prod-name" data-es="Proteína Vanilla" data-en="Vanilla Protein" data-pt="Proteína Baunilha">Proteína Vanilla</div>
+      <p class="prod-desc" data-es="Whey isolate, sin edulcorantes artificiales, endulzada con monk fruit. Mi favorita." data-en="Whey isolate, no artificial sweeteners, sweetened with monk fruit. My favorite." data-pt="Whey isolado, sem adoçantes artificiais, adoçada com monk fruit. Minha favorita.">Whey isolate, sin edulcorantes artificiales, endulzada con monk fruit. Mi favorita.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
     <a href="https://amzn.to/3IkEFQI" target="_blank" class="prod-card">
       <span class="prod-emoji">🍨</span>
-      <div class="prod-name">Postre Proteico</div>
-      <p class="prod-desc">Peanut butter, dulce y natural. 24g de proteína por porción. El que me preguntan cada semana.</p>
+      <div class="prod-name" data-es="Postre Proteico" data-en="Protein Dessert" data-pt="Sobremesa Proteica">Postre Proteico</div>
+      <p class="prod-desc" data-es="Peanut butter, dulce y natural. 24g de proteína por porción. El que me preguntan cada semana." data-en="Peanut butter, sweet and natural. 24g of protein per serving. The one I get asked about every week." data-pt="Pasta de amendoim, doce e natural. 24g de proteína por porção. O que me perguntam toda semana.">Peanut butter, dulce y natural. 24g de proteína por porción. El que me preguntan cada semana.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
     <a href="https://amzn.to/3YiVJMb" target="_blank" class="prod-card">
       <span class="prod-emoji">🏃</span>
       <div class="prod-name">Re-Lyte Mango</div>
-      <p class="prod-desc">Hidratación de atleta. Electrolitos sin azúcar — lo uso en carreras Spartan y días de calor.</p>
+      <p class="prod-desc" data-es="Hidratación de atleta. Electrolitos sin azúcar — lo uso en carreras Spartan y días de calor." data-en="Athlete hydration. Sugar-free electrolytes — I use it in Spartan races and hot days." data-pt="Hidratação de atleta. Eletrólitos sem açúcar — uso nas corridas Spartan e dias de calor.">Hidratación de atleta. Electrolitos sin azúcar — lo uso en carreras Spartan y días de calor.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
   </div>
 
-  <div class="cat-label">⌚ Tech & Gear</div>
+  <div class="cat-label" data-es="🥤 Proteínas Especiales · Inscripción" data-en="🥤 Special Proteins · Sign-up" data-pt="🥤 Proteínas Especiais · Inscrição">🥤 Proteínas Especiales · Inscripción</div>
+  <div class="products-grid">
+    <a class="prod-card" style="cursor:pointer" onclick="openLead('Proteína Choco/Milo/Toddy','🍫')">
+      <span class="prod-emoji">🍫</span>
+      <div class="prod-name">Proteína Choco/Milo/Toddy</div>
+      <p class="prod-desc" data-es="Proteína especial sabor chocolate estilo Milo/Toddy. Te inscribes conmigo y eliges tu paquete — yo te guío en todo el proceso." data-en="Special chocolate-style protein (Milo/Toddy vibe). Sign up with me and choose your package — I'll guide you through the whole process." data-pt="Proteína especial sabor chocolate estilo Milo/Toddy. Você se inscreve comigo e escolhe seu pacote — eu te guio em todo o processo.">Proteína especial sabor chocolate estilo Milo/Toddy. Te inscribes conmigo y eliges tu paquete — yo te guío en todo el proceso.</p>
+      <span class="prod-cta" data-es="Quiero esta proteína →" data-en="I want this protein →" data-pt="Quero esta proteína →">Quiero esta proteína →</span>
+    </a>
+    <a class="prod-card" style="cursor:pointer" onclick="openLead('Proteína Chicha + Canela','🥛')">
+      <span class="prod-emoji">🥛</span>
+      <div class="prod-name">Proteína Chicha + Canela</div>
+      <p class="prod-desc" data-es="Sabor chicha con canela — la consentida. Te inscribes conmigo, eliges tu paquete y yo te acompaño paso a paso." data-en="Chicha + cinnamon flavor — the crowd favorite. Sign up with me, choose your package, and I'll walk you through every step." data-pt="Sabor chicha com canela — a queridinha. Você se inscreve comigo, escolhe seu pacote e eu te acompanho passo a passo.">Sabor chicha con canela — la consentida. Te inscribes conmigo, eliges tu paquete y yo te acompaño paso a paso.</p>
+      <span class="prod-cta">Quiero esta proteína →</span>
+    </a>
+  </div>
+
+  <div class="cat-label" data-es="⌚ Tech & Gear" data-en="⌚ Tech & Gear" data-pt="⌚ Tecnologia & Equipamentos">⌚ Tech & Gear</div>
   <div class="products-grid">
     <a href="https://amzn.to/3GsSmwd" target="_blank" class="prod-card">
       <span class="prod-emoji">🚀</span>
       <div class="prod-name">Garmin Forerunner 965</div>
-      <p class="prod-desc">El reloj de los atletas serios. GPS, métricas de entrenamiento, VO2 max. El que yo uso.</p>
+      <p class="prod-desc" data-es="El reloj de los atletas serios. GPS, métricas de entrenamiento, VO2 max. El que yo uso." data-en="The watch for serious athletes. GPS, training metrics, VO2 max. The one I use." data-pt="O relógio dos atletas sérios. GPS, métricas de treino, VO2 máx. O que eu uso.">El reloj de los atletas serios. GPS, métricas de entrenamiento, VO2 max. El que yo uso.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
-    <a href="https://amzn.to/4jwtaTU" target="_blank" class="prod-card">
+    <a href="https://amzn.to/3SULhKI" target="_blank" class="prod-card">
       <span class="prod-emoji">❤️‍🔥</span>
-      <div class="prod-name">Smartwatch Básico</div>
-      <p class="prod-desc">Para empezar a monitorear tu progreso sin gastar una fortuna. Hace lo esencial bien.</p>
+      <div class="prod-name" data-es="Smartwatch Básico" data-en="Basic Smartwatch" data-pt="Smartwatch Básico">Smartwatch Básico</div>
+      <p class="prod-desc" data-es="Para empezar a monitorear tu progreso sin gastar una fortuna. Hace lo esencial bien." data-en="To start tracking your progress without spending a fortune. Does the essentials well." data-pt="Para começar a monitorar seu progresso sem gastar uma fortuna. Faz o essencial bem.">Para empezar a monitorear tu progreso sin gastar una fortuna. Hace lo esencial bien.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
-    <a href="https://amzn.to/3ScLZzr" target="_blank" class="prod-card">
+    <a href="https://amzn.to/4eBDx7N" target="_blank" class="prod-card">
       <span class="prod-emoji">⚖️</span>
-      <div class="prod-name">Báscula Smart</div>
-      <p class="prod-desc">Controla tu progreso con datos reales. Peso, masa muscular, grasa corporal — conectada al celular.</p>
+      <div class="prod-name" data-es="Báscula Smart" data-en="Smart Scale" data-pt="Balança Smart">Báscula Smart</div>
+      <p class="prod-desc" data-es="Controla tu progreso con datos reales. Peso, masa muscular, grasa corporal — conectada al celular." data-en="Track your progress with real data. Weight, muscle mass, body fat — connected to your phone." data-pt="Acompanhe seu progresso com dados reais. Peso, massa muscular, gordura corporal — conectada ao celular.">Controla tu progreso con datos reales. Peso, masa muscular, grasa corporal — conectada al celular.</p>
       <span class="prod-cta">Ver en Amazon →</span>
     </a>
   </div>
 
-  <div class="cat-label">🏋️ Marcas Afiliadas</div>
+  <div class="cat-label" data-es="🏋️ Marcas Afiliadas" data-en="🏋️ Affiliate Brands" data-pt="🏋️ Marcas Afiliadas">🏋️ Marcas Afiliadas</div>
   <div class="products-grid">
     <a href="https://www.omorpho.com/JAY" target="_blank" class="prod-card">
       <span class="prod-emoji">🦾</span>
       <div class="prod-name">OMORPHO Weighted Gear</div>
-      <p class="prod-desc">Ropa con peso integrado. Spartan-level training. La uso en mis entrenos de resistencia.</p>
-      <span class="prod-cta">Ver OMORPHO →</span>
+      <p class="prod-desc" data-es="Ropa con peso integrado. Spartan-level training. La uso en mis entrenos de resistencia." data-en="Clothing with built-in weight. Spartan-level training. I use it in my endurance workouts." data-pt="Roupa com peso integrado. Treino nível Spartan. Uso nos meus treinos de resistência.">Ropa con peso integrado. Spartan-level training. La uso en mis entrenos de resistencia.</p>
+      <span class="prod-cta" data-es="Ver OMORPHO →" data-en="View OMORPHO →" data-pt="Ver OMORPHO →">Ver OMORPHO →</span>
     </a>
     <a href="http://heroboardfitness.com/?ref=CoachGERMAN" target="_blank" class="prod-card">
       <span class="prod-emoji">🏄</span>
       <div class="prod-name">HEROBOARD Fitness</div>
-      <p class="prod-desc">La tabla Pilates portátil. Hecha en USA, 10 lbs, calidad de reformer en cualquier lugar.</p>
-      <span class="prod-cta">Ver HEROBOARD →</span>
+      <p class="prod-desc" data-es="La tabla Pilates portátil. Hecha en USA, 10 lbs, calidad de reformer en cualquier lugar." data-en="The portable Pilates board. Made in USA, 10 lbs, reformer quality anywhere." data-pt="A prancha de Pilates portátil. Feita nos EUA, 10 lbs, qualidade de reformer em qualquer lugar.">La tabla Pilates portátil. Hecha en USA, 10 lbs, calidad de reformer en cualquier lugar.</p>
+      <span class="prod-cta" data-es="Ver HEROBOARD →" data-en="View HEROBOARD →" data-pt="Ver HEROBOARD →">Ver HEROBOARD →</span>
     </a>
     <a href="https://sweat440.com/free-class-registration/?utm_source=grassroots&utm_medium=referral&utm_campaign=coach_German" target="_blank" class="prod-card">
       <span class="prod-emoji">🔥</span>
-      <div class="prod-name">Sweat440 — 1ra Clase Gratis</div>
-      <p class="prod-desc">Clase de fuerza HIIT de 40 minutos. Registro gratuito para nuevos miembros con mi link.</p>
-      <span class="prod-cta">Registrarme gratis →</span>
+      <div class="prod-name" data-es="Sweat440 — 1ra Clase Gratis" data-en="Sweat440 — 1st Class Free" data-pt="Sweat440 — 1ª Aula Grátis">Sweat440 — 1ra Clase Gratis</div>
+      <p class="prod-desc" data-es="Clase de fuerza HIIT de 40 minutos. Registro gratuito para nuevos miembros con mi link." data-en="40-minute HIIT strength class. Free registration for new members with my link." data-pt="Aula de força HIIT de 40 minutos. Registro gratuito para novos membros com meu link.">Clase de fuerza HIIT de 40 minutos. Registro gratuito para nuevos miembros con mi link.</p>
+      <span class="prod-cta" data-es="Registrarme gratis →" data-en="Register free →" data-pt="Registrar grátis →">Registrarme gratis →</span>
     </a>
   </div>
 
-  <div class="cat-label">📚 Recursos CoachGer</div>
+  <div class="cat-label" data-es="📚 Recursos CoachGer" data-en="📚 CoachGer Resources" data-pt="📚 Recursos CoachGer">📚 Recursos CoachGer</div>
   <div class="products-grid">
     <a href="index.html#guias" class="prod-card">
       <span class="prod-emoji">🥗</span>
-      <div class="prod-name">Guía de Porciones</div>
-      <p class="prod-desc">PDF gratuito. Tu mano como medida. Funciona en cualquier contexto sin contar calorías.</p>
-      <span class="prod-cta">Descargar gratis →</span>
+      <div class="prod-name" data-es="Guía de Porciones" data-en="Portion Guide" data-pt="Guia de Porções">Guía de Porciones</div>
+      <p class="prod-desc" data-es="PDF gratuito. Tu mano como medida. Funciona en cualquier contexto sin contar calorías." data-en="Free PDF. Your hand as a measure. Works in any context without counting calories." data-pt="PDF gratuito. Sua mão como medida. Funciona em qualquer contexto sem contar calorias.">PDF gratuito. Tu mano como medida. Funciona en cualquier contexto sin contar calorías.</p>
+      <span class="prod-cta" data-es="Descargar gratis →" data-en="Download free →" data-pt="Baixar grátis →">Descargar gratis →</span>
     </a>
     <a href="index.html#guias" class="prod-card">
       <span class="prod-emoji">💪</span>
-      <div class="prod-name">Proteínas Efectivas</div>
-      <p class="prod-desc">PDF gratuito. Fuentes, porciones y calorías de toda proteína animal y vegetal.</p>
+      <div class="prod-name" data-es="Proteínas Efectivas" data-en="Effective Proteins" data-pt="Proteínas Eficazes">Proteínas Efectivas</div>
+      <p class="prod-desc" data-es="PDF gratuito. Fuentes, porciones y calorías de toda proteína animal y vegetal." data-en="Free PDF. Sources, portions and calories of every animal and plant protein." data-pt="PDF gratuito. Fontes, porções e calorias de toda proteína animal e vegetal.">PDF gratuito. Fuentes, porciones y calorías de toda proteína animal y vegetal.</p>
       <span class="prod-cta">Descargar gratis →</span>
     </a>
     <a href="index.html#planes" class="prod-card">
       <span class="prod-emoji">📋</span>
-      <div class="prod-name">Plan 28 Días</div>
-      <p class="prod-desc">Plan completo de nutrición con lista de supermercado y guía de meal prep. $27.</p>
-      <span class="prod-cta">Ver plan →</span>
+      <div class="prod-name" data-es="Plan 28 Días" data-en="28-Day Plan" data-pt="Plano de 28 Dias">Plan 28 Días</div>
+      <p class="prod-desc" data-es="Plan completo de nutrición con lista de supermercado y guía de meal prep. $27." data-en="Complete nutrition plan with grocery list and meal prep guide. $27." data-pt="Plano completo de nutrição com lista de supermercado e guia de meal prep. $27.">Plan completo de nutrición con lista de supermercado y guía de meal prep. $27.</p>
+      <span class="prod-cta" data-es="Ver plan →" data-en="View plan →" data-pt="Ver plano →">Ver plan →</span>
     </a>
     <a href="index.html#planes" class="prod-card">
       <span class="prod-emoji">🏆</span>
-      <div class="prod-name">Plan Personalizado</div>
-      <p class="prod-desc">InBody real + macros a tu medida + seguimiento semanal conmigo. $97.</p>
+      <div class="prod-name" data-es="Plan Personalizado" data-en="Custom Plan" data-pt="Plano Personalizado">Plan Personalizado</div>
+      <p class="prod-desc" data-es="InBody real + macros a tu medida + seguimiento semanal conmigo. $97." data-en="Real InBody + custom macros + weekly follow-up with me. $97." data-pt="InBody real + macros sob medida + acompanhamento semanal comigo. $97.">InBody real + macros a tu medida + seguimiento semanal conmigo. $97.</p>
       <span class="prod-cta">Ver plan →</span>
     </a>
   </div>
 
-  <div class="cat-label">☕ Apoya a CoachGer</div>
+  <div class="cat-label" data-es="☕ Apoya a CoachGer" data-en="☕ Support CoachGer" data-pt="☕ Apoie o CoachGer">☕ Apoya a CoachGer</div>
   <div class="products-grid" style="max-width:220px">
     <a href="https://buymeacoffee.com/coachger" target="_blank" class="prod-card">
       <span class="prod-emoji">🥤</span>
-      <div class="prod-name">Batido Post-Entreno</div>
-      <p class="prod-desc">Si mi contenido te ha ayudado, puedes invitarme un batido de proteína. ¡Gracias!</p>
-      <span class="prod-cta">Invitar batido →</span>
+      <div class="prod-name" data-es="Batido Post-Entreno" data-en="Post-Workout Shake" data-pt="Shake Pós-Treino">Batido Post-Entreno</div>
+      <p class="prod-desc" data-es="Si mi contenido te ha ayudado, puedes invitarme un batido de proteína. ¡Gracias!" data-en="If my content has helped you, you can buy me a protein shake. Thanks!" data-pt="Se meu conteúdo te ajudou, você pode me pagar um shake de proteína. Obrigado!">Si mi contenido te ha ayudado, puedes invitarme un batido de proteína. ¡Gracias!</p>
+      <span class="prod-cta" data-es="Invitar batido →" data-en="Buy a shake →" data-pt="Pagar um shake →">Invitar batido →</span>
     </a>
   </div>
 
-  <p class="affiliate-note">🔗 Los links de Amazon son de afiliado. Si compras a través de ellos, recibo una pequeña comisión sin costo extra para ti. OMORPHO y HEROBOARD también son afiliados. Solo recomiendo lo que uso personalmente.</p>
+  <p class="affiliate-note" data-es="🔗 Los links de Amazon son de afiliado. Si compras a través de ellos, recibo una pequeña comisión sin costo extra para ti. OMORPHO y HEROBOARD también son afiliados. Solo recomiendo lo que uso personalmente." data-en="🔗 Amazon links are affiliate links. If you buy through them, I receive a small commission at no extra cost to you. OMORPHO and HEROBOARD are also affiliates. I only recommend what I personally use." data-pt="🔗 Os links da Amazon são de afiliado. Se você comprar por eles, recebo uma pequena comissão sem custo extra para você. OMORPHO e HEROBOARD também são afiliados. Só recomendo o que uso pessoalmente.">🔗 Los links de Amazon son de afiliado. Si compras a través de ellos, recibo una pequeña comisión sin costo extra para ti. OMORPHO y HEROBOARD también son afiliados. Solo recomiendo lo que uso personalmente.</p>
 </div>
 
 <footer>
@@ -199,5 +237,80 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
   <div class="foot-copy">© 2026 · Germán Olivo · Weston, FL</div>
 </footer>
 <a href="https://wa.me/+19545446647" class="wa-float" target="_blank">💬</a>
+
+<!-- Hidden form so Netlify detects and stores the lead -->
+<form name="lead-proteina" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="producto">
+  <input type="text" name="nombre">
+  <input type="text" name="fecha_nacimiento">
+  <input type="email" name="email">
+  <input type="tel" name="telefono">
+</form>
+
+<!-- Lead modal -->
+<div class="lead-modal" id="lead-modal" onclick="closeIfOverlay(event)">
+  <div class="lead-box">
+    <button class="lead-x" onclick="closeLead()" aria-label="Cerrar">&times;</button>
+    <span class="lead-emoji" id="lm-emoji">🥤</span>
+    <h3 class="lead-title" id="lm-title">Proteína Especial</h3>
+    <p class="lead-sub" data-es="Déjame tus datos y te contacto para activar tu inscripción. Al enviar te abro WhatsApp y la página para elegir tu paquete." data-en="Leave your details and I'll contact you to activate your sign-up. On submit I'll open WhatsApp and the page to choose your package." data-pt="Deixe seus dados e eu te contato para ativar sua inscrição. Ao enviar, abro o WhatsApp e a página para escolher seu pacote.">Déjame tus datos y te contacto para activar tu inscripción. Al enviar te abro WhatsApp y la página para elegir tu paquete.</p>
+    <input id="lm-name" class="lead-input" type="text" placeholder="Nombre completo" autocomplete="name" data-es="Nombre completo" data-en="Full name" data-pt="Nome completo" data-placeholder-es="Nombre completo" data-placeholder-en="Full name" data-placeholder-pt="Nome completo">
+    <input id="lm-dob" class="lead-input" type="text" placeholder="Fecha de nacimiento" onfocus="this.type='date'" onblur="if(!this.value)this.type='text'" autocomplete="bday" data-es="Fecha de nacimiento" data-en="Date of birth" data-pt="Data de nascimento" data-placeholder-es="Fecha de nacimiento" data-placeholder-en="Date of birth" data-placeholder-pt="Data de nascimento">
+    <input id="lm-email" class="lead-input" type="email" placeholder="Email" autocomplete="email" data-es="Email" data-en="Email" data-pt="Email" data-placeholder-es="Email" data-placeholder-en="Email" data-placeholder-pt="Email">
+    <input id="lm-phone" class="lead-input" type="tel" placeholder="Número de teléfono (WhatsApp)" autocomplete="tel" data-es="Número de teléfono (WhatsApp)" data-en="Phone number (WhatsApp)" data-pt="Número de telefone (WhatsApp)" data-placeholder-es="Número de teléfono (WhatsApp)" data-placeholder-en="Phone number (WhatsApp)" data-placeholder-pt="Número de telefone (WhatsApp)">
+    <button class="lead-submit" onclick="submitLead()" data-es="Quiero inscribirme →" data-en="I want to sign up →" data-pt="Quero me inscrever →">Quiero inscribirme →</button>
+    <p class="lead-success" id="lm-success" data-es="¡Listo! Te abro WhatsApp y la página de inscripción 🙌" data-en="Done! Opening WhatsApp and the sign-up page 🙌" data-pt="Pronto! Abrindo o WhatsApp e a página de inscrição 🙌">¡Listo! Te abro WhatsApp y la página de inscripción 🙌</p>
+    <p class="lead-hint" data-es="Para adquirir la proteína te inscribes en la página de paquetes. Yo te guío." data-en="To get the protein you sign up on the packages page. I'll guide you." data-pt="Para adquirir a proteína você se inscreve na página de pacotes. Eu te guio.">Para adquirir la proteína te inscribes en la página de paquetes. Yo te guío.</p>
+  </div>
+</div>
+
+<script>
+let LANG='es';
+function setLang(l){
+  LANG=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.textContent===l.toUpperCase()));
+  document.documentElement.lang=l;
+  document.querySelectorAll('[data-es]').forEach(el=>{
+    const val=el.getAttribute('data-'+l);
+    if(!val) return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA'){
+      const k='data-placeholder-'+l;
+      if(el.hasAttribute(k)) el.placeholder=el.getAttribute(k);
+    } else { el.innerHTML=val; }
+  });
+}
+const FARMASI_URL = 'https://www.farmasius.com/coachger/package-selection';
+let currentProt = '';
+function openLead(prot, emoji){
+  currentProt = prot;
+  document.getElementById('lm-emoji').textContent = emoji || '🥤';
+  document.getElementById('lm-title').textContent = prot;
+  document.getElementById('lm-success').style.display = 'none';
+  ['lm-name','lm-dob','lm-email','lm-phone'].forEach(id=>{document.getElementById(id).value='';});
+  document.getElementById('lm-dob').type='text';
+  document.getElementById('lead-modal').classList.add('open');
+}
+function closeLead(){ document.getElementById('lead-modal').classList.remove('open'); }
+function closeIfOverlay(e){ if(e.target===document.getElementById('lead-modal')) closeLead(); }
+function shakeEl(id){ const el=document.getElementById(id); el.classList.remove('shake'); void el.offsetWidth; el.classList.add('shake'); }
+function submitLead(){
+  const nombre=document.getElementById('lm-name').value.trim();
+  const dob=document.getElementById('lm-dob').value.trim();
+  const email=document.getElementById('lm-email').value.trim();
+  const phone=document.getElementById('lm-phone').value.trim();
+  if(!nombre){shakeEl('lm-name');return;}
+  if(!dob){shakeEl('lm-dob');return;}
+  if(!email){shakeEl('lm-email');return;}
+  if(!phone){shakeEl('lm-phone');return;}
+  const body = new URLSearchParams({'form-name':'lead-proteina','producto':currentProt,'nombre':nombre,'fecha_nacimiento':dob,'email':email,'telefono':phone});
+  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body.toString()}).catch(()=>{});
+  const msg = `Hola CoachGer! Quiero la "${currentProt}" 🥤\n\nNombre: ${nombre}\nFecha de nacimiento: ${dob}\nEmail: ${email}\nTeléfono: ${phone}`;
+  document.getElementById('lm-success').style.display='block';
+  setTimeout(()=>{
+    window.open(`https://wa.me/+19545446647?text=${encodeURIComponent(msg)}`, '_blank');
+    setTimeout(()=>{ window.open(FARMASI_URL,'_blank'); closeLead(); }, 700);
+  }, 900);
+}
+</script>
 </body>
 </html>
