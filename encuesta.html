@@ -162,6 +162,73 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
           <input class="form-inp" type="tel" id="telefono" name="telefono" placeholder="+1 (305) 000-0000" required/>
         </div>
       </div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="Sexo biológico *" data-en="Biological sex *" data-pt="Sexo biológico *">Sexo biológico *</label>
+        <p class="form-hint" data-es="Lo usamos para calcular tu metabolismo basal con precisión." data-en="We use it to calculate your basal metabolism accurately." data-pt="Usamos para calcular seu metabolismo basal com precisão.">Lo usamos para calcular tu metabolismo basal con precisión.</p>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="sexo" value="Mujer" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Mujer" data-en="Female" data-pt="Mulher">Mujer</span></span></label>
+          <label class="radio-opt"><input type="radio" name="sexo" value="Hombre"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Hombre" data-en="Male" data-pt="Homem">Hombre</span></span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- TU OBJETIVO -->
+    <div class="form-section">
+      <div class="form-sec-title" data-es="Tu objetivo" data-en="Your goal" data-pt="Seu objetivo">Tu objetivo</div>
+      <div class="form-hr"></div>
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Cuál es tu objetivo principal con este plan? *" data-en="What's your main goal with this plan? *" data-pt="Qual é o seu objetivo principal com este plano? *">¿Cuál es tu objetivo principal con este plan? *</label>
+        <p class="form-hint" data-es="No hay respuesta incorrecta. Esto define cómo calculo tus calorías y macros." data-en="There's no wrong answer. This defines how I calculate your calories and macros." data-pt="Não há resposta errada. Isso define como calculo suas calorias e macros.">No hay respuesta incorrecta. Esto define cómo calculo tus calorías y macros.</p>
+        <div class="radio-grid cols-1">
+          <label class="radio-opt"><input type="radio" name="objetivo" value="Recomposición — bajar grasa y ganar músculo" required/><span class="radio-face"><span class="radio-dot"></span><span data-es="Recomposición — bajar grasa y ganar músculo" data-en="Recomposition — lose fat and build muscle" data-pt="Recomposição — perder gordura e ganhar músculo">Recomposición — bajar grasa y ganar músculo</span></span></label>
+          <label class="radio-opt"><input type="radio" name="objetivo" value="Bajar grasa / definir"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Bajar grasa / definir" data-en="Lose fat / get lean" data-pt="Perder gordura / definir">Bajar grasa / definir</span></span></label>
+          <label class="radio-opt"><input type="radio" name="objetivo" value="Ganar músculo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Ganar músculo" data-en="Build muscle" data-pt="Ganhar músculo">Ganar músculo</span></span></label>
+          <label class="radio-opt"><input type="radio" name="objetivo" value="Tonificar y sentirme mejor"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Tonificar y sentirme mejor" data-en="Tone up and feel better" data-pt="Tonificar e me sentir melhor">Tonificar y sentirme mejor</span></span></label>
+          <label class="radio-opt"><input type="radio" name="objetivo" value="Salud general y energía"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Salud general y energía" data-en="General health and energy" data-pt="Saúde geral e energia">Salud general y energía</span></span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIDAS -->
+    <div class="form-section">
+      <div class="form-sec-title" data-es="Medidas" data-en="Measurements" data-pt="Medidas">Medidas</div>
+      <div class="form-hr"></div>
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Cómo prefieres darme tus medidas? *" data-en="How would you like to give me your measurements? *" data-pt="Como você prefere me passar suas medidas? *">¿Cómo prefieres darme tus medidas? *</label>
+        <p class="form-hint" data-es="El scan (báscula de casa o InBody) lo adjuntas por WhatsApp al terminar." data-en="The scan (home scale or InBody) is sent via WhatsApp when you finish." data-pt="O scan (balança de casa ou InBody) você envia por WhatsApp ao finalizar.">El scan (báscula de casa o InBody) lo adjuntas por WhatsApp al terminar.</p>
+        <div class="radio-grid cols-1">
+          <label class="radio-opt"><input type="radio" name="medidas_modo" value="Las escribo aquí" required/><span class="radio-face"><span class="radio-dot"></span><span><strong data-es="Las escribo aquí" data-en="I'll type them here" data-pt="Escrevo aqui">Las escribo aquí</strong><span class="radio-sub" data-es="Peso, altura y edad" data-en="Weight, height and age" data-pt="Peso, altura e idade">Peso, altura y edad</span></span></span></label>
+          <label class="radio-opt"><input type="radio" name="medidas_modo" value="Anexo mi scan por WhatsApp"/><span class="radio-face"><span class="radio-dot"></span><span><strong data-es="Anexo mi scan más reciente" data-en="I'll attach my latest scan" data-pt="Anexo meu scan mais recente">Anexo mi scan más reciente</strong><span class="radio-sub" data-es="Báscula de casa o InBody — lo envías por WhatsApp" data-en="Home scale or InBody — sent via WhatsApp" data-pt="Balança de casa ou InBody — enviado por WhatsApp">Báscula de casa o InBody — lo envías por WhatsApp</span></span></span></label>
+          <label class="radio-opt"><input type="radio" name="medidas_modo" value="Prefiero hacer el InBody contigo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Prefiero hacer el InBody contigo" data-en="I'd rather do the InBody with you" data-pt="Prefiro fazer o InBody com você">Prefiero hacer el InBody contigo</span></span></label>
+        </div>
+      </div>
+      <div id="cond-medidas" style="display:none">
+        <div class="row-2">
+          <div class="form-field">
+            <label class="form-lbl" data-es="Peso" data-en="Weight" data-pt="Peso">Peso</label>
+            <input class="form-inp" type="text" id="peso" name="peso" placeholder="Ej: 145 lb"/>
+          </div>
+          <div class="form-field">
+            <label class="form-lbl" data-es="Altura" data-en="Height" data-pt="Altura">Altura</label>
+            <input class="form-inp" type="text" id="altura" name="altura" placeholder="Ej: 1.62 m"/>
+          </div>
+        </div>
+        <div class="row-2">
+          <div class="form-field">
+            <label class="form-lbl" data-es="Edad" data-en="Age" data-pt="Idade">Edad</label>
+            <input class="form-inp" type="number" id="edad" name="edad" placeholder="Ej: 34" min="10" max="99"/>
+          </div>
+          <div class="form-field">
+            <label class="form-lbl" data-es="Cintura (opcional)" data-en="Waist (optional)" data-pt="Cintura (opcional)">Cintura (opcional)</label>
+            <input class="form-inp" type="text" id="cintura" name="cintura" placeholder="Ej: 78 cm"/>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-lbl" data-es="Cadera (opcional)" data-en="Hip (optional)" data-pt="Quadril (opcional)">Cadera (opcional)</label>
+          <input class="form-inp" type="text" id="cadera" name="cadera" placeholder="Ej: 96 cm"/>
+        </div>
+      </div>
     </div>
 
     <!-- RUTINA DIARIA -->
@@ -233,6 +300,106 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
       <div class="form-field">
         <label class="form-lbl" data-es="10 · ¿Tomas algún medicamento actualmente?" data-en="10 · Are you currently taking any medication?" data-pt="10 · Você toma algum medicamento atualmente?">10 · ¿Tomas algún medicamento actualmente?</label>
         <input class="form-inp" type="text" id="q10" name="q10" placeholder="Ej: Anticonceptivas, metformina — o escribe Ninguno" data-es="Ej: Anticonceptivas, metformina — o escribe Ninguno" data-en="E.g.: Birth control, metformin — or write None" data-pt="Ex: Anticoncepcional, metformina — ou escreva Nenhum" data-placeholder-es="Ej: Anticonceptivas, metformina — o escribe Ninguno" data-placeholder-en="E.g.: Birth control, metformin — or write None" data-placeholder-pt="Ex: Anticoncepcional, metformina — ou escreva Nenhum"/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Tienes exámenes recientes que quieras que considere?" data-en="Do you have recent lab work you'd like me to consider?" data-pt="Você tem exames recentes que gostaria que eu considerasse?">¿Tienes exámenes recientes que quieras que considere?</label>
+        <p class="form-hint" data-es="Sangre, glucosa/HbA1c, tiroides, hormonas. Los reviso para ajustar tu plan — no son un diagnóstico médico." data-en="Blood, glucose/HbA1c, thyroid, hormones. I review them to fine-tune your plan — this is not a medical diagnosis." data-pt="Sangue, glicose/HbA1c, tireoide, hormônios. Reviso para ajustar seu plano — não é um diagnóstico médico.">Sangre, glucosa/HbA1c, tiroides, hormonas. Los reviso para ajustar tu plan — no son un diagnóstico médico.</p>
+        <div class="radio-grid cols-1">
+          <label class="radio-opt"><input type="radio" name="examenes" value="Sí, los adjunto por WhatsApp"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí, los adjunto por WhatsApp" data-en="Yes, I'll attach them via WhatsApp" data-pt="Sim, anexo por WhatsApp">Sí, los adjunto por WhatsApp</span></span></label>
+          <label class="radio-opt"><input type="radio" name="examenes" value="No tengo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No tengo" data-en="I don't have any" data-pt="Não tenho">No tengo</span></span></label>
+          <label class="radio-opt"><input type="radio" name="examenes" value="Quiero hacérmelos"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Quiero hacérmelos" data-en="I'd like to get them done" data-pt="Quero fazê-los">Quiero hacérmelos</span></span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALUD HORMONAL — MUJER (condicional) -->
+    <div class="form-section" id="cond-mujer" style="display:none">
+      <div class="form-sec-title" data-es="Salud hormonal" data-en="Hormonal health" data-pt="Saúde hormonal">Salud hormonal</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Estás embarazada o lactando actualmente?" data-en="Are you currently pregnant or breastfeeding?" data-pt="Você está grávida ou amamentando atualmente?">¿Estás embarazada o lactando actualmente?</label>
+        <p class="form-hint" data-es="Importante: si lo estás, no trabajamos déficit. Tu plan se ajusta." data-en="Important: if so, we don't run a deficit. Your plan adapts." data-pt="Importante: se estiver, não trabalhamos com déficit. Seu plano se ajusta.">Importante: si lo estás, no trabajamos déficit. Tu plan se ajusta.</p>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="embarazo_estado" value="Embarazada"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Embarazada" data-en="Pregnant" data-pt="Grávida">Embarazada</span></span></label>
+          <label class="radio-opt"><input type="radio" name="embarazo_estado" value="Lactando"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Lactando" data-en="Breastfeeding" data-pt="Amamentando">Lactando</span></span></label>
+          <label class="radio-opt"><input type="radio" name="embarazo_estado" value="Postparto reciente (menos de 6 meses)"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Postparto reciente (menos de 6 meses)" data-en="Recent postpartum (under 6 months)" data-pt="Pós-parto recente (menos de 6 meses)">Postparto reciente (menos de 6 meses)</span></span></label>
+          <label class="radio-opt"><input type="radio" name="embarazo_estado" value="Ninguna"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Ninguna" data-en="None" data-pt="Nenhuma">Ninguna</span></span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Estás en menopausia o perimenopausia?" data-en="Are you in menopause or perimenopause?" data-pt="Você está na menopausa ou perimenopausa?">¿Estás en menopausia o perimenopausia?</label>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="menopausia" value="Sí, menopausia"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí, menopausia" data-en="Yes, menopause" data-pt="Sim, menopausa">Sí, menopausia</span></span></label>
+          <label class="radio-opt"><input type="radio" name="menopausia" value="Perimenopausia"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Perimenopausia" data-en="Perimenopause" data-pt="Perimenopausa">Perimenopausia</span></span></label>
+          <label class="radio-opt"><input type="radio" name="menopausia" value="No"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No" data-en="No" data-pt="Não">No</span></span></label>
+          <label class="radio-opt"><input type="radio" name="menopausia" value="No estoy segura"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No estoy segura" data-en="Not sure" data-pt="Não tenho certeza">No estoy segura</span></span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Tienes algún diagnóstico hormonal?" data-en="Do you have any hormonal diagnosis?" data-pt="Você tem algum diagnóstico hormonal?">¿Tienes algún diagnóstico hormonal?</label>
+        <p class="form-hint" data-es="Ej: SOP (ovario poliquístico), tiroides. Déjalo en blanco si no aplica." data-en="E.g.: PCOS, thyroid. Leave blank if not applicable." data-pt="Ex: SOP (ovário policístico), tireoide. Deixe em branco se não se aplica.">Ej: SOP (ovario poliquístico), tiroides. Déjalo en blanco si no aplica.</p>
+        <input class="form-inp" type="text" id="diag_hormonal" name="diag_hormonal" placeholder="Escríbelo aquí" data-es="Escríbelo aquí" data-en="Type it here" data-pt="Escreva aqui" data-placeholder-es="Escríbelo aquí" data-placeholder-en="Type it here" data-placeholder-pt="Escreva aqui"/>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Has tenido embarazos?" data-en="Have you had pregnancies?" data-pt="Você teve gravidezes?">¿Has tenido embarazos?</label>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="embarazos_previos" value="Sí"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí" data-en="Yes" data-pt="Sim">Sí</span></span></label>
+          <label class="radio-opt"><input type="radio" name="embarazos_previos" value="No"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No" data-en="No" data-pt="Não">No</span></span></label>
+        </div>
+      </div>
+
+      <div id="cond-embarazos" style="display:none">
+        <div class="form-field">
+          <label class="form-lbl" data-es="¿Cuántos hijos?" data-en="How many children?" data-pt="Quantos filhos?">¿Cuántos hijos?</label>
+          <input class="form-inp" type="number" id="num_hijos" name="num_hijos" placeholder="Ej: 2" min="0" max="15" style="max-width:140px"/>
+        </div>
+        <div class="form-field">
+          <label class="form-lbl" data-es="Tipo de parto" data-en="Type of delivery" data-pt="Tipo de parto">Tipo de parto</label>
+          <div class="radio-grid">
+            <label class="radio-opt"><input type="radio" name="tipo_parto" value="Natural"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Natural" data-en="Vaginal" data-pt="Natural">Natural</span></span></label>
+            <label class="radio-opt"><input type="radio" name="tipo_parto" value="Cesárea"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Cesárea" data-en="C-section" data-pt="Cesárea">Cesárea</span></span></label>
+            <label class="radio-opt"><input type="radio" name="tipo_parto" value="Ambos"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Ambos" data-en="Both" data-pt="Ambos">Ambos</span></span></label>
+          </div>
+        </div>
+        <div class="form-field">
+          <label class="form-lbl" data-es="¿Te evaluaron diástasis (separación abdominal)?" data-en="Have you been assessed for diastasis (abdominal separation)?" data-pt="Você foi avaliada para diástase (separação abdominal)?">¿Te evaluaron diástasis (separación abdominal)?</label>
+          <p class="form-hint" data-es="Esto define qué tan realista es marcar abdominales en esta etapa." data-en="This defines how realistic visible abs are at this stage." data-pt="Isso define o quão realista é marcar o abdômen nesta etapa.">Esto define qué tan realista es marcar abdominales en esta etapa.</p>
+          <div class="radio-grid">
+            <label class="radio-opt"><input type="radio" name="diastasis" value="Sí, tengo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí, tengo" data-en="Yes, I have it" data-pt="Sim, tenho">Sí, tengo</span></span></label>
+            <label class="radio-opt"><input type="radio" name="diastasis" value="No tengo"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No tengo" data-en="I don't have it" data-pt="Não tenho">No tengo</span></span></label>
+            <label class="radio-opt"><input type="radio" name="diastasis" value="No me la han evaluado / no sé"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No me la han evaluado / no sé" data-en="Not assessed / don't know" data-pt="Não foi avaliada / não sei">No me la han evaluado / no sé</span></span></label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SALUD HORMONAL — HOMBRE (condicional) -->
+    <div class="form-section" id="cond-hombre" style="display:none">
+      <div class="form-sec-title" data-es="Salud hormonal" data-en="Hormonal health" data-pt="Saúde hormonal">Salud hormonal</div>
+      <div class="form-hr"></div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Has notado alguno de estos síntomas?" data-en="Have you noticed any of these symptoms?" data-pt="Você notou algum destes sintomas?">¿Has notado alguno de estos síntomas?</label>
+        <p class="form-hint" data-es="Energía baja, pérdida de músculo, más grasa abdominal, libido baja. Nos da un indicativo de tu testosterona." data-en="Low energy, muscle loss, more belly fat, low libido. It gives us a read on your testosterone." data-pt="Energia baixa, perda de músculo, mais gordura abdominal, libido baixa. Nos dá um indicativo da sua testosterona.">Energía baja, pérdida de músculo, más grasa abdominal, libido baja. Nos da un indicativo de tu testosterona.</p>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="andropausia" value="Varios, de forma constante"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Varios, de forma constante" data-en="Several, consistently" data-pt="Vários, de forma constante">Varios, de forma constante</span></span></label>
+          <label class="radio-opt"><input type="radio" name="andropausia" value="Algunos"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Algunos" data-en="Some" data-pt="Alguns">Algunos</span></span></label>
+          <label class="radio-opt"><input type="radio" name="andropausia" value="No"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No" data-en="No" data-pt="Não">No</span></span></label>
+          <label class="radio-opt"><input type="radio" name="andropausia" value="Tengo diagnóstico de testosterona baja"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Tengo diagnóstico de testosterona baja" data-en="I have a low-testosterone diagnosis" data-pt="Tenho diagnóstico de testosterona baixa">Tengo diagnóstico de testosterona baja</span></span></label>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label class="form-lbl" data-es="¿Estás en terapia de reemplazo de testosterona (TRT)?" data-en="Are you on testosterone replacement therapy (TRT)?" data-pt="Você faz terapia de reposição de testosterona (TRT)?">¿Estás en terapia de reemplazo de testosterona (TRT)?</label>
+        <div class="radio-grid">
+          <label class="radio-opt"><input type="radio" name="trt" value="Sí"/><span class="radio-face"><span class="radio-dot"></span><span data-es="Sí" data-en="Yes" data-pt="Sim">Sí</span></span></label>
+          <label class="radio-opt"><input type="radio" name="trt" value="No"/><span class="radio-face"><span class="radio-dot"></span><span data-es="No" data-en="No" data-pt="Não">No</span></span></label>
+        </div>
       </div>
     </div>
 
@@ -322,6 +489,11 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
       </div>
     </div>
 
+    <!-- NOTA WHATSAPP -->
+    <div style="background:var(--cyan-l);border:1.5px solid rgba(0,180,216,.3);border-radius:16px;padding:18px 22px;margin-bottom:24px;font-size:14px;color:var(--navy);line-height:1.6">
+      <span data-es="📲 <strong>Último paso:</strong> al enviar, adjunta por WhatsApp tu scan (báscula o InBody) y cualquier examen que tengas. Así tu plan sale completo y sin demoras." data-en="📲 <strong>Last step:</strong> after submitting, attach your scan (scale or InBody) and any lab work via WhatsApp. That way your plan comes out complete and without delays." data-pt="📲 <strong>Último passo:</strong> ao enviar, anexe por WhatsApp seu scan (balança ou InBody) e qualquer exame que tenha. Assim seu plano sai completo e sem atrasos.">📲 <strong>Último paso:</strong> al enviar, adjunta por WhatsApp tu scan (báscula o InBody) y cualquier examen que tengas. Así tu plan sale completo y sin demoras.</span>
+    </div>
+
     <!-- SUBMIT -->
     <div class="submit-section">
       <p data-es="Al enviar este formulario, CoachGer revisará tu información y se pondrá en contacto contigo pronto." data-en="When you submit this form, CoachGer will review your information and get in touch with you soon." data-pt="Ao enviar este formulário, o CoachGer vai revisar suas informações e entrar em contato em breve.">Al enviar este formulario, CoachGer revisará tu información y se pondrá en contacto contigo pronto.</p>
@@ -397,11 +569,39 @@ document.getElementById('intake-form').addEventListener('submit', function(e) {
   const getT = id  => { const el = document.getElementById(id); return el ? (el.value.trim() || '—') : '—'; };
   const getR = name => { const el = form.querySelector(`[name="${name}"]:checked`); return el ? el.value : '—'; };
 
+  const sexo = getR('sexo');
+
+  let bloqueMedidas = '';
+  if (getR('medidas_modo') === 'Las escribo aquí') {
+    bloqueMedidas = `\n   Peso: ${getT('peso')} · Altura: ${getT('altura')} · Edad: ${getT('edad')}\n   Cintura: ${getT('cintura')} · Cadera: ${getT('cadera')}`;
+  }
+
+  let bloqueHormonal = '';
+  if (sexo === 'Mujer') {
+    bloqueHormonal =
+`\n\n👩 *SALUD HORMONAL*
+*Embarazo/Lactancia:* ${getR('embarazo_estado')}
+*Menopausia:* ${getR('menopausia')}
+*Diagnóstico hormonal:* ${getT('diag_hormonal')}
+*¿Embarazos previos?:* ${getR('embarazos_previos')}`;
+    if (getR('embarazos_previos') === 'Sí') {
+      bloqueHormonal += `\n*Hijos:* ${getT('num_hijos')} · *Parto:* ${getR('tipo_parto')} · *Diástasis:* ${getR('diastasis')}`;
+    }
+  } else if (sexo === 'Hombre') {
+    bloqueHormonal =
+`\n\n👨 *SALUD HORMONAL*
+*Síntomas (andropausia):* ${getR('andropausia')}
+*TRT:* ${getR('trt')}`;
+  }
+
   const msg = encodeURIComponent(
 `🏋️ NUEVO CUESTIONARIO — #CoachGer
 
 👤 *Nombre:* ${getT('nombre')}
 📱 *Teléfono:* ${getT('telefono')}
+⚧ *Sexo:* ${sexo}
+🎯 *Objetivo:* ${getR('objetivo')}
+📏 *Medidas:* ${getR('medidas_modo')}${bloqueMedidas}${bloqueHormonal}
 
 *01 Horario:* ${getT('q1')}
 *02 Entreno:* ${getT('q2')}
@@ -413,6 +613,7 @@ document.getElementById('intake-form').addEventListener('submit', function(e) {
 *08 Alergias:* ${getT('q8')}
 *09 No come:* ${getT('q9')}
 *10 Medicamentos:* ${getT('q10')}
+*Exámenes:* ${getR('examenes')}
 *11 Estrés:* ${getR('q11')}
 *12 Sueño:* ${getR('q12')}
 *13 Digestión:* ${getR('q13')}
@@ -429,6 +630,32 @@ document.getElementById('intake-form').addEventListener('submit', function(e) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, 600);
 });
+
+/* === LÓGICA CONDICIONAL: muestra/oculta bloques === */
+(function(){
+  function show(el, on){ if(el) el.style.display = on ? 'block' : 'none'; }
+  var cMujer = document.getElementById('cond-mujer'),
+      cHombre = document.getElementById('cond-hombre'),
+      cMed = document.getElementById('cond-medidas'),
+      cEmb = document.getElementById('cond-embarazos');
+
+  document.querySelectorAll('input[name="sexo"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      show(cMujer, this.value === 'Mujer');
+      show(cHombre, this.value === 'Hombre');
+    });
+  });
+  document.querySelectorAll('input[name="medidas_modo"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      show(cMed, this.value === 'Las escribo aquí');
+    });
+  });
+  document.querySelectorAll('input[name="embarazos_previos"]').forEach(function(r){
+    r.addEventListener('change', function(){
+      show(cEmb, this.value === 'Sí');
+    });
+  });
+})();
 </script>
 </body>
 </html>
