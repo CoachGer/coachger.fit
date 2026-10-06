@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CoachGer — Nutrición con propósito</title>
+<title>CoachGer — Training · Nutrition · Performance</title>
 <!-- Open Graph / Social preview -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CoachGer">
 <meta property="og:locale" content="es_ES">
 <meta property="og:url" content="https://coachger.fit/">
-<meta property="og:title" content="CoachGer — Nutrición basada en tu cuerpo real">
-<meta property="og:description" content="Planes de nutrición personalizados, recomposición corporal y resultados que ves en el espejo. Pembroke Pines, FL.">
+<meta property="og:title" content="CoachGer — Training · Nutrition · Performance">
+<meta property="og:description" content="Entrenamiento, nutrición y performance con estructura para transformar tu cuerpo y tu rendimiento.">
 <meta property="og:image" content="https://coachger.fit/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -336,6 +336,7 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 </style>
 </head>
 <body>
+<form name="calculator-lead" data-netlify="true" hidden><input name="nombre"><input name="whatsapp"><input name="mantenimiento"></form>
 
 <!-- NAV -->
 <nav>
@@ -361,19 +362,16 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-img"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-logo-blur"></div>
+  <div class="hero-img"></div><div class="hero-overlay"></div><div class="hero-logo-blur"></div>
   <div class="hero-content">
-    <div class="hero-eyebrow" data-es="Nutrición · Pembroke Pines, FL · #CoachGer" data-en="Nutrition · Pembroke Pines, FL · #CoachGer" data-pt="Nutrição · Pembroke Pines, FL · #CoachGer">Nutrición · Pembroke Pines, FL · #CoachGer</div>
-    <h1 data-es="Come bien.<em>Cambia todo.</em>" data-en="Eat right.<em>Change everything.</em>" data-pt="Coma bem.<em>Mude tudo.</em>">Come bien.<em>Cambia todo.</em></h1>
-    <p class="hero-sub" data-es="Planes de nutrición basados en tu cuerpo real. <em>Resultados que ves en el espejo.</em>" data-en="Nutrition plans based on your real body. <em>Results you see in the mirror.</em>" data-pt="Planos de nutrição baseados no seu corpo real. <em>Resultados que você vê no espelho.</em>">Planes de nutrición basados en tu cuerpo real. <em>Resultados que ves en el espejo.</em></p>
+    <div class="hero-eyebrow" data-es="TRAINING · NUTRITION · PERFORMANCE · #CoachGer" data-en="TRAINING · NUTRITION · PERFORMANCE · #CoachGer" data-pt="TREINO · NUTRIÇÃO · PERFORMANCE · #CoachGer">TRAINING · NUTRITION · PERFORMANCE · #CoachGer</div>
+    <h1 data-es="Entrena. Come mejor.<em>Cambia tu cuerpo.</em>" data-en="Train. Eat better.<em>Change your body.</em>" data-pt="Treine. Coma melhor.<em>Mude seu corpo.</em>">Entrena. Come mejor.<em>Cambia tu cuerpo.</em></h1>
+    <p class="hero-sub" data-es="No necesitas otro atajo. Necesitas una estructura que puedas seguir para verte, sentirte y rendir mejor." data-en="You don't need another shortcut. You need a structure you can follow to look, feel and perform better." data-pt="Você não precisa de outro atalho. Precisa de uma estrutura que consiga seguir para se sentir e render melhor.">No necesitas otro atajo. Necesitas una estructura que puedas seguir para verte, sentirte y rendir mejor.</p>
     <div class="hero-btns">
-      <a href="#planes" class="btn-hero-main" data-es="Ver planes" data-en="See plans" data-pt="Ver planos">Ver planes</a>
-      <a href="#guias" class="btn-hero-ghost" data-es="Guías gratis →" data-en="Free guides →" data-pt="Guias grátis →">Guías gratis →</a>
+      <a href="#calculadora" class="btn-hero-main" data-es="EMPIEZA GRATIS" data-en="START FREE" data-pt="COMECE GRÁTIS">EMPIEZA GRATIS</a>
+      <a href="#planes" class="btn-hero-ghost" data-es="TRABAJA CONMIGO →" data-en="WORK WITH ME →" data-pt="TRABALHE COMIGO →">TRABAJA CONMIGO →</a>
     </div>
-  </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span>scroll</span></div>
+  </div><div class="hero-scroll"><div class="scroll-line"></div><span>scroll</span></div>
 </section>
 
 <!-- CALCULADORA -->
@@ -493,7 +491,11 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
 
       <!-- CTA final (oculto hasta desbloquear) -->
       <div class="calc-cta-final" id="calc-cta-final" style="display:none">
-        <a href="#planes" data-es="Quiero un plan a mi medida →" data-en="I want a custom plan →" data-pt="Quero um plano personalizado →">Quiero un plan a mi medida →</a>
+        <p style="font-weight:700;margin-bottom:12px" data-es="Ya tienes tus números. Ahora elige cómo quieres avanzar:" data-en="You have your numbers. Now choose how you want to move forward:" data-pt="Você já tem seus números. Agora escolha como quer avançar:">Ya tienes tus números. Ahora elige cómo quieres avanzar:</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+          <a href="#planes" data-es="QUIERO HACERLO POR MI CUENTA · $27 →" data-en="I WANT TO DO IT MYSELF · $27 →" data-pt="QUERO FAZER POR CONTA PRÓPRIA · $27 →">QUIERO HACERLO POR MI CUENTA · $27 →</a>
+          <a href="#coach28" style="background:var(--cyan)" data-es="QUIERO QUE COACHGER ME GUÍE · $97 →" data-en="I WANT COACHGER TO GUIDE ME · $97 →" data-pt="QUERO QUE O COACHGER ME GUIE · $97 →">QUIERO QUE COACHGER ME GUÍE · $97 →</a>
+        </div>
       </div>
 
       <p class="calc-disclaimer" data-es="Estimación basada en la fórmula Mifflin-St Jeor. No constituye diagnóstico médico ni nutricional." data-en="Estimate based on the Mifflin-St Jeor formula. Not a medical or nutritional diagnosis." data-pt="Estimativa baseada na fórmula de Mifflin-St Jeor. Não é um diagnóstico médico ou nutricional.">Estimación basada en la fórmula Mifflin-St Jeor. No constituye diagnóstico médico ni nutricional.</p>
@@ -559,19 +561,19 @@ footer{border-top:1px solid var(--border);padding:24px 32px;display:flex;align-i
       </ul>
       <a href="https://wa.me/+19545446647?text=Hola%20CoachGer%2C%20quiero%20el%20Plan%20de%20%2427" class="btn-plan-card" data-es="Quiero este plan →" data-en="I want this plan →" data-pt="Quero este plano →">Quiero este plan →</a>
     </div>
-    <div class="plan-card plan-dark">
-      <span class="plan-badge-tag" data-es="Mejor resultado" data-en="Best results" data-pt="Melhores resultados">Mejor resultado</span>
+    <div class="plan-card plan-dark" id="coach28">
+      <span class="plan-badge-tag" data-es="Acompañamiento 1:1" data-en="1:1 Coaching" data-pt="Acompanhamento 1:1">Acompañamiento 1:1</span>
       <div class="plan-price-num"><sup>$</sup>97</div>
-      <div class="plan-plan-name" data-es="Plan Personalizado + Seguimiento" data-en="Personalized Plan + Follow-up" data-pt="Plano Personalizado + Acompanhamento">Plan Personalizado + Seguimiento</div>
+      <div class="plan-plan-name" data-es="28 Días Conmigo" data-en="28 Days With Me" data-pt="28 Dias Comigo">28 Días Conmigo</div>
       <div class="plan-hr"></div>
       <ul class="plan-feats">
-        <li><span class="chk">✓</span><span data-es="Todo lo del plan base +" data-en="Everything in base plan +" data-pt="Tudo do plano base +">Todo lo del plan base +</span></li>
-        <li><span class="chk">✓</span><span data-es="Basado en tu InBody real" data-en="Based on your real InBody" data-pt="Baseado no seu InBody real">Basado en tu InBody real</span></li>
-        <li><span class="chk">✓</span><span data-es="Calorías y macros a tu medida" data-en="Calories and macros tailored to you" data-pt="Calorias e macros sob medida para você">Calorías y macros a tu medida</span></li>
-        <li><span class="chk">✓</span><span data-es="Seguimiento semanal" data-en="Weekly check-in" data-pt="Check-in semanal">Seguimiento semanal</span></li>
-        <li><span class="chk">✓</span><span data-es="Acceso directo por WhatsApp" data-en="Direct WhatsApp access" data-pt="Acesso direto por WhatsApp">Acceso directo por WhatsApp</span></li>
+        <li><span class="chk">✓</span><span data-es="Una estrategia hecha alrededor de tu cuerpo, rutina y objetivo" data-en="A strategy built around your body, routine and goal" data-pt="Uma estratégia feita para seu corpo, rotina e objetivo">Una estrategia hecha alrededor de tu cuerpo, rutina y objetivo</span></li>
+        <li><span class="chk">✓</span><span data-es="28 días de dirección clara, sin improvisar" data-en="28 days of clear direction, no guessing" data-pt="28 dias de direção clara, sem improvisar">28 días de dirección clara, sin improvisar</span></li>
+        <li><span class="chk">✓</span><span data-es="Ajustes basados en tu progreso real" data-en="Adjustments based on your real progress" data-pt="Ajustes baseados no seu progresso real">Ajustes basados en tu progreso real</span></li>
+        <li><span class="chk">✓</span><span data-es="Seguimiento conmigo durante el proceso" data-en="Follow-up with me throughout the process" data-pt="Acompanhamento comigo durante o processo">Seguimiento conmigo durante el proceso</span></li>
+        <li><span class="chk">✓</span><span data-es="No solo recibes un plan: tienes acompañamiento" data-en="You do not just get a plan: you get coaching" data-pt="Você não recebe só um plano: recebe acompanhamento">No solo recibes un plan: tienes acompañamiento</span></li>
       </ul>
-      <a href="https://wa.me/+19545446647?text=Hola%20CoachGer%2C%20quiero%20el%20Plan%20Personalizado%20de%20%2497" class="btn-plan-card" data-es="Quiero este plan →" data-en="I want this plan →" data-pt="Quero este plano →">Quiero este plan →</a>
+      <a href="https://coachger.fit/myplan" class="btn-plan-card" data-es="QUIERO 28 DÍAS CONTIGO →" data-en="I WANT 28 DAYS WITH YOU →" data-pt="QUERO 28 DIAS COM VOCÊ →">QUIERO 28 DÍAS CONTIGO →</a>
     </div>
   </div>
 </section>
@@ -848,22 +850,17 @@ function calcRun() {
 
 function calcUnlock() {
   const nombre = document.getElementById('lead-nombre').value.trim();
-  const wa     = document.getElementById('lead-wa').value.trim();
+  const wa = document.getElementById('lead-wa').value.trim();
   if (!nombre || !wa) {
     alert(LANG === 'es' ? 'Por favor ingresa tu nombre y WhatsApp.' : 'Please enter your name and WhatsApp.');
     return;
   }
-  // Quitar blur
+  const mant = calcRound10(calcMaint);
+  const body = new URLSearchParams({'form-name':'calculator-lead', nombre, whatsapp:wa, mantenimiento:String(mant)});
+  fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body:body.toString()}).catch(()=>{});
   document.getElementById('calc-cards').classList.remove('calc-blur');
   document.getElementById('calc-overlay').style.display = 'none';
   document.getElementById('calc-cta-final').style.display = 'block';
-
-  // Abrir WhatsApp con mensaje pre-armado
-  const mant = calcRound10(calcMaint).toLocaleString();
-  const msgEs = `Hola CoachGer! Soy ${nombre}. Calculé mis calorías y mi mantenimiento estimado es ${mant} kcal/día. ¿Cómo puedo empezar con un plan a mi medida? 💪`;
-  const msgEn = `Hi CoachGer! I'm ${nombre}. I calculated my calories and my estimated maintenance is ${mant} kcal/day. How can I start with a custom plan? 💪`;
-  const msg = encodeURIComponent(LANG === 'es' ? msgEs : msgEn);
-  window.open('https://wa.me/+19545446647?text=' + msg, '_blank');
 }
 // ─────────────────────────────────────────────────────────────
 
